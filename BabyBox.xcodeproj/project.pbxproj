@@ -1,0 +1,377 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6B1C27BD14889B4F00975EBE /* WebWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B1C27BC14889B4F00975EBE /* WebWindow.xib */; };
+		6B1C27C11488A8A600975EBE /* WebWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C27C01488A8A600975EBE /* WebWindow.m */; };
+		6B2971BC148859EE00CC1229 /* box_logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6B2971BB148859EE00CC1229 /* box_logo.gif */; };
+		6B2971BE14885BF900CC1229 /* right_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B2971BD14885BF900CC1229 /* right_shadow.png */; };
+		6B2971C214885D9600CC1229 /* HTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2971C114885D9600CC1229 /* HTTPRequest.m */; };
+		6B2971CD148863EC00CC1229 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2971CC148863EC00CC1229 /* XMLReader.m */; };
+		6B4754191488C05C0006B4E9 /* BoxUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B4754181488C05C0006B4E9 /* BoxUser.m */; };
+		FCC0127C1488461A000429C2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC0127B1488461A000429C2 /* Cocoa.framework */; };
+		FCC012861488461A000429C2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FCC012841488461A000429C2 /* InfoPlist.strings */; };
+		FCC012881488461A000429C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC012871488461A000429C2 /* main.m */; };
+		FCC0128C1488461A000429C2 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FCC0128A1488461A000429C2 /* Credits.rtf */; };
+		FCC0128F1488461A000429C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC0128E1488461A000429C2 /* AppDelegate.m */; };
+		FCC012921488461A000429C2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCC012901488461A000429C2 /* MainMenu.xib */; };
+		FCC012A514884CCC000429C2 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC012A414884CCC000429C2 /* WebKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6B1C27BC14889B4F00975EBE /* WebWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WebWindow.xib; path = BabyBox/WebWindow.xib; sourceTree = "<group>"; };
+		6B1C27BF1488A8A600975EBE /* WebWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebWindow.h; sourceTree = "<group>"; };
+		6B1C27C01488A8A600975EBE /* WebWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebWindow.m; sourceTree = "<group>"; };
+		6B2971BB148859EE00CC1229 /* box_logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = box_logo.gif; sourceTree = "<group>"; };
+		6B2971BD14885BF900CC1229 /* right_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_shadow.png; sourceTree = "<group>"; };
+		6B2971C014885D8800CC1229 /* HTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPRequest.h; sourceTree = "<group>"; };
+		6B2971C114885D9600CC1229 /* HTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPRequest.m; sourceTree = "<group>"; };
+		6B2971CB148863EC00CC1229 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
+		6B2971CC148863EC00CC1229 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
+		6B4754171488C05C0006B4E9 /* BoxUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxUser.h; sourceTree = "<group>"; };
+		6B4754181488C05C0006B4E9 /* BoxUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxUser.m; sourceTree = "<group>"; };
+		FCC012771488461A000429C2 /* BabyBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabyBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCC0127B1488461A000429C2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		FCC0127E1488461A000429C2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		FCC0127F1488461A000429C2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FCC012801488461A000429C2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FCC012831488461A000429C2 /* BabyBox-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BabyBox-Info.plist"; sourceTree = "<group>"; };
+		FCC012851488461A000429C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FCC012871488461A000429C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FCC012891488461A000429C2 /* BabyBox-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BabyBox-Prefix.pch"; sourceTree = "<group>"; };
+		FCC0128B1488461A000429C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		FCC0128D1488461A000429C2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FCC0128E1488461A000429C2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FCC012911488461A000429C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		FCC012A414884CCC000429C2 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FCC012741488461A000429C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCC012A514884CCC000429C2 /* WebKit.framework in Frameworks */,
+				FCC0127C1488461A000429C2 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6B1C27BE1488A88600975EBE /* WebWindow */ = {
+			isa = PBXGroup;
+			children = (
+				6B1C27BF1488A8A600975EBE /* WebWindow.h */,
+				6B1C27C01488A8A600975EBE /* WebWindow.m */,
+				6B1C27BC14889B4F00975EBE /* WebWindow.xib */,
+			);
+			name = WebWindow;
+			sourceTree = "<group>";
+		};
+		6B2971B9148859DF00CC1229 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				6B2971BB148859EE00CC1229 /* box_logo.gif */,
+				6B2971BD14885BF900CC1229 /* right_shadow.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		6B2971BF14885D7600CC1229 /* HTTPRequest */ = {
+			isa = PBXGroup;
+			children = (
+				6B2971C014885D8800CC1229 /* HTTPRequest.h */,
+				6B2971C114885D9600CC1229 /* HTTPRequest.m */,
+			);
+			name = HTTPRequest;
+			sourceTree = "<group>";
+		};
+		6B2971C414885FE800CC1229 /* XMLReader */ = {
+			isa = PBXGroup;
+			children = (
+				6B2971CB148863EC00CC1229 /* XMLReader.h */,
+				6B2971CC148863EC00CC1229 /* XMLReader.m */,
+			);
+			name = XMLReader;
+			sourceTree = "<group>";
+		};
+		6B4754161488C0460006B4E9 /* BoxUser */ = {
+			isa = PBXGroup;
+			children = (
+				6B4754171488C05C0006B4E9 /* BoxUser.h */,
+				6B4754181488C05C0006B4E9 /* BoxUser.m */,
+			);
+			name = BoxUser;
+			sourceTree = "<group>";
+		};
+		FCC0126C1488461A000429C2 = {
+			isa = PBXGroup;
+			children = (
+				6B4754161488C0460006B4E9 /* BoxUser */,
+				6B1C27BE1488A88600975EBE /* WebWindow */,
+				6B2971C414885FE800CC1229 /* XMLReader */,
+				6B2971BF14885D7600CC1229 /* HTTPRequest */,
+				6B2971B9148859DF00CC1229 /* Images */,
+				FCC012811488461A000429C2 /* BabyBox */,
+				FCC0127A1488461A000429C2 /* Frameworks */,
+				FCC012781488461A000429C2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FCC012781488461A000429C2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FCC012771488461A000429C2 /* BabyBox.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FCC0127A1488461A000429C2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FCC0127B1488461A000429C2 /* Cocoa.framework */,
+				FCC0127D1488461A000429C2 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FCC0127D1488461A000429C2 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FCC012A414884CCC000429C2 /* WebKit.framework */,
+				FCC0127E1488461A000429C2 /* AppKit.framework */,
+				FCC0127F1488461A000429C2 /* CoreData.framework */,
+				FCC012801488461A000429C2 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		FCC012811488461A000429C2 /* BabyBox */ = {
+			isa = PBXGroup;
+			children = (
+				FCC0128D1488461A000429C2 /* AppDelegate.h */,
+				FCC0128E1488461A000429C2 /* AppDelegate.m */,
+				FCC012901488461A000429C2 /* MainMenu.xib */,
+				FCC012821488461A000429C2 /* Supporting Files */,
+			);
+			path = BabyBox;
+			sourceTree = "<group>";
+		};
+		FCC012821488461A000429C2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FCC012831488461A000429C2 /* BabyBox-Info.plist */,
+				FCC012841488461A000429C2 /* InfoPlist.strings */,
+				FCC012871488461A000429C2 /* main.m */,
+				FCC012891488461A000429C2 /* BabyBox-Prefix.pch */,
+				FCC0128A1488461A000429C2 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FCC012761488461A000429C2 /* BabyBox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCC012951488461A000429C2 /* Build configuration list for PBXNativeTarget "BabyBox" */;
+			buildPhases = (
+				FCC012731488461A000429C2 /* Sources */,
+				FCC012741488461A000429C2 /* Frameworks */,
+				FCC012751488461A000429C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BabyBox;
+			productName = BabyBox;
+			productReference = FCC012771488461A000429C2 /* BabyBox.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FCC0126E1488461A000429C2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Klint Holmes";
+			};
+			buildConfigurationList = FCC012711488461A000429C2 /* Build configuration list for PBXProject "BabyBox" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FCC0126C1488461A000429C2;
+			productRefGroup = FCC012781488461A000429C2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FCC012761488461A000429C2 /* BabyBox */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FCC012751488461A000429C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCC012861488461A000429C2 /* InfoPlist.strings in Resources */,
+				FCC0128C1488461A000429C2 /* Credits.rtf in Resources */,
+				FCC012921488461A000429C2 /* MainMenu.xib in Resources */,
+				6B2971BC148859EE00CC1229 /* box_logo.gif in Resources */,
+				6B2971BE14885BF900CC1229 /* right_shadow.png in Resources */,
+				6B1C27BD14889B4F00975EBE /* WebWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FCC012731488461A000429C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCC012881488461A000429C2 /* main.m in Sources */,
+				FCC0128F1488461A000429C2 /* AppDelegate.m in Sources */,
+				6B2971C214885D9600CC1229 /* HTTPRequest.m in Sources */,
+				6B2971CD148863EC00CC1229 /* XMLReader.m in Sources */,
+				6B1C27C11488A8A600975EBE /* WebWindow.m in Sources */,
+				6B4754191488C05C0006B4E9 /* BoxUser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FCC012841488461A000429C2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCC012851488461A000429C2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FCC0128A1488461A000429C2 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCC0128B1488461A000429C2 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		FCC012901488461A000429C2 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCC012911488461A000429C2 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FCC012931488461A000429C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		FCC012941488461A000429C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		FCC012961488461A000429C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BabyBox/BabyBox-Prefix.pch";
+				INFOPLIST_FILE = "BabyBox/BabyBox-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FCC012971488461A000429C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BabyBox/BabyBox-Prefix.pch";
+				INFOPLIST_FILE = "BabyBox/BabyBox-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FCC012711488461A000429C2 /* Build configuration list for PBXProject "BabyBox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCC012931488461A000429C2 /* Debug */,
+				FCC012941488461A000429C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCC012951488461A000429C2 /* Build configuration list for PBXNativeTarget "BabyBox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCC012961488461A000429C2 /* Debug */,
+				FCC012971488461A000429C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FCC0126E1488461A000429C2 /* Project object */;
+}
