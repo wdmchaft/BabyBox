@@ -19,7 +19,7 @@
 - (id)init {
 	if (self == [super init]) {
 		self.buffer = [[NSMutableData alloc] init];
-		self.type = HTTPRequestDefault;
+		self.type = HTTPRequestGetAuth;
 	}
 	return self;
 }

@@ -35,5 +35,7 @@
 
 @property (nonatomic, retain) NSString *ticket;
 
+-(void)setWithDefaults;
 -(void)calculateSpaceLeft;
+
 @end

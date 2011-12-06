@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 typedef enum {
-   HTTPRequestDefault,
-   HTTPRequestAdImage
+   HTTPRequestGetAuth,
+   HTTPRequestGetUserInfo
 } RequestType;
 
 @protocol HTTPRequestDelegate <NSObject>
