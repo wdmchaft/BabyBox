@@ -34,7 +34,7 @@
         [createAccountButton setHidden:YES];
     }
     
-    [self createBoxFolder];
+    
 }
 
 #pragma mark - Sign in
@@ -145,7 +145,9 @@
         usageText.stringValue = [NSString stringWithFormat:@"%ld %@ of %ld GB", [user.spaceUsed longValue] / base, measure, [user.spaceAmount longValue] / (1048576*1024)];
         
         [signInButton setTitle:@"Sign Out"];
+    
         [createAccountButton setHidden:YES];
+        [self createBoxFolder];
     }
     else
     {
@@ -188,14 +190,39 @@
     }
     else
     {
-        if(![fileManager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:NULL])
-            
-            NSLog(@"Error: Create folder failed %@", path);
-        
+       NSAlert *alert = [NSAlert alertWithMessageText:@"Do You Want Folder?" defaultButton:@"Jess" alternateButton:@"No" otherButton:nil informativeTextWithFormat:@"Hey Bro"];
+       // NSInteger *done = [alert runModal];
+        [alert beginSheetModalForWindow:self.window modalDelegate:self didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:) contextInfo:nil];
+        /*if ([alert runModal] == NSAlertDefaultReturn) {
+            if(![fileManager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:NULL])
+                
+                NSLog(@"Error: Create folder failed %@", path);
+        } else {
+            NSLog(@"You no want box");
+        }*/
+               
     }
       
 //  if(![fileManager createDirectoryAtPath:directory withIntermediateDirectories:YES attributes:nil error:NULL])
 //  NSLog(@"Error: Create folder failed %@", directory);
 }
+
+-(void)alertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
+    if (returnCode == NSAlertDefaultReturn) {
+        NSString *path = [[NSString alloc] initWithString:@"~/Box/"];
+        path = [path stringByExpandingTildeInPath];
+        //BOOL isDir;
+        
+        NSLog(@"%@", path);
+        
+        NSFileManager *fileManager= [NSFileManager defaultManager]; 
+        if(![fileManager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:NULL])
+            
+            NSLog(@"Error: Create folder failed %@", path);
+    } else {
+        NSLog(@"You no want box");
+    }
+}
+    
 
 @end

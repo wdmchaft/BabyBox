@@ -27,7 +27,7 @@
     NSString *url = [sender mainFrameURL];
     NSRange range = [url rangeOfString:@"?"];
     NSString *subString = [url substringToIndex:NSMaxRange(range)];
-    if([subString isEqualToString:@"http://www.google.com/?"])
+    if([subString isEqualToString:@"https://www.box.net/api/1.0/auth/oob?"])
         [delegate closeWebWindow];
     NSLog(@"%@", [sender mainFrameURL]);
 }
