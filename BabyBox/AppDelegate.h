@@ -23,6 +23,9 @@
     NSTextField *usageText;
     NSProgressIndicator *usage;
     NSTextField *userName;
+    
+    NSButton *signInButton;
+    NSButton *createAccountButton;
 }
 
 @property (assign) IBOutlet NSWindow *window;
@@ -32,7 +35,12 @@
 @property (nonatomic, retain) IBOutlet NSTextField *usageText;
 @property (nonatomic, retain) IBOutlet NSProgressIndicator *usage;
 
+@property (nonatomic, retain) IBOutlet NSButton *signInButton;
+@property (nonatomic, retain) IBOutlet NSButton *createAccountButton;
+
 -(IBAction)signIn:(id)sender;
+-(IBAction)createAccount:(id)sender;
 -(void)closeWebWindow;
 -(void)fetchUserInfo;
+-(void)createBoxFolder;
 @end

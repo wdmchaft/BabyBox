@@ -13,7 +13,8 @@
 @implementation AppDelegate
 
 @synthesize window = _window;
-@synthesize webWindow, user, userName, usage, usageText;
+@synthesize webWindow, user, userName, usage, usageText, signInButton, createAccountButton;
+
 - (void)dealloc
 {
     [super dealloc];
@@ -29,24 +30,44 @@
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"authToken"]) {
         [user setWithDefaults];
         [self fetchUserInfo];
+        [signInButton setTitle:@"Sign Out"];
+        [createAccountButton setHidden:YES];
     }
+    
+    [self createBoxFolder];
 }
 
 #pragma mark - Sign in
 -(IBAction)signIn:(id)sender
 {
-    self.user = [[BoxUser alloc] init];
+    if([((NSButton *)sender).title isEqualToString:@"Sign In"])
+    {
+        self.user = [[BoxUser alloc] init];
+        
+        self.webWindow = [[WebWindow alloc] init];
+        [self.webWindow setDelegate:self];
+        [self.webWindow loadWindow];
+        [[self.webWindow window] makeKeyAndOrderFront:self];
+        [[self.webWindow loadingDialog] startAnimation:self];
+        
+        //Sign user into Box.net
+        HTTPRequest *request = [[HTTPRequest alloc] init];
+        [request setDelegate:self];
+        [request startRequest:[NSString stringWithFormat:@"%@%@",apiURL, ticketAction] animated:YES];
+        [request release]; 
+    }
+    else
+    {
+        //sign out
+        [signInButton setTitle:@"Sign In"];
+        [createAccountButton setHidden:NO];
+        [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"authToken"];
+    }
+}
+
+-(IBAction)createAccount:(id)sender
+{
     
-    self.webWindow = [[WebWindow alloc] init];
-    [self.webWindow setDelegate:self];
-    [self.webWindow loadWindow];
-    [[self.webWindow window] makeKeyAndOrderFront:self];
-    [[self.webWindow loadingDialog] startAnimation:self];
-    //Sign user into Box.net
-    HTTPRequest *request = [[HTTPRequest alloc] init];
-    [request setDelegate:self];
-    [request startRequest:[NSString stringWithFormat:@"%@%@",apiURL, ticketAction] animated:YES];
-    [request release];    
 }
 
 #pragma mark - HTTPRequest Delegate Methods
@@ -122,6 +143,9 @@
         [usage setDoubleValue:[[user spaceUsed] doubleValue]];
         NSLog(@"%ld", [user.spaceAmount longValue] / (1048576*1024));
         usageText.stringValue = [NSString stringWithFormat:@"%ld %@ of %ld GB", [user.spaceUsed longValue] / base, measure, [user.spaceAmount longValue] / (1048576*1024)];
+        
+        [signInButton setTitle:@"Sign Out"];
+        [createAccountButton setHidden:YES];
     }
     else
     {
@@ -146,6 +170,32 @@
     [request setDelegate:self];
     [request startRequest:urlRequest animated:YES];
     [request release];
+}
+
+-(void)createBoxFolder
+{
+    NSString *path = [[NSString alloc] initWithString:@"~/Box/"];
+    path = [path stringByExpandingTildeInPath];
+    BOOL isDir;
+    
+    NSLog(@"%@", path);
+                      
+    NSFileManager *fileManager= [NSFileManager defaultManager]; 
+        
+    if([fileManager fileExistsAtPath:path isDirectory:&isDir])
+    {
+        NSLog(@"The folder exists!");
+    }
+    else
+    {
+        if(![fileManager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:NULL])
+            
+            NSLog(@"Error: Create folder failed %@", path);
+        
+    }
+      
+//  if(![fileManager createDirectoryAtPath:directory withIntermediateDirectories:YES attributes:nil error:NULL])
+//  NSLog(@"Error: Create folder failed %@", directory);
 }
 
 @end
