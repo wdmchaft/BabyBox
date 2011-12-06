@@ -25,7 +25,11 @@
 }
 
 - (void) awakeFromNib {
-    //[[OAuth sharedOAuth] authenticateAndAuthorize];
+    user = [[BoxUser alloc] init];
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"authToken"]) {
+        [user setWithDefaults];
+        [self fetchUserInfo];
+    }
 }
 
 #pragma mark - Sign in
@@ -78,7 +82,7 @@
         NSString *spaceAmount = [[NSString alloc] initWithString:[[[[dic objectForKey:@"response"]objectForKey:@"user"] objectForKey:@"space_amount"] objectForKey:@"text"]];
         NSString *spaceUsed = [[NSString alloc] initWithString:[[[[dic objectForKey:@"response"]objectForKey:@"user"] objectForKey:@"space_used"] objectForKey:@"text"]];
         NSString *maxUploadSize = [[NSString alloc] initWithString:[[[[dic objectForKey:@"response"]objectForKey:@"user"] objectForKey:@"max_upload_size"] objectForKey:@"text"]];
-        
+                
         [self.user setAuthToken:authToken];
         [self.user setLogin:login];
         [self.user setEmail:email];
@@ -88,8 +92,17 @@
         [self.user setSpaceUsed:[NSNumber numberWithDouble:[spaceUsed doubleValue]]];
         [self.user setMaxUploadSize:[NSNumber numberWithDouble:[maxUploadSize doubleValue]]];
         
-        [self.userName setStringValue:[user login]];
-         
+        [[NSUserDefaults standardUserDefaults] setValue:self.user.userID forKey:@"userID"];
+        [[NSUserDefaults standardUserDefaults] setValue:self.user.login forKey:@"login"];
+        [[NSUserDefaults standardUserDefaults] setValue:self.user.email forKey:@"email"];
+        [[NSUserDefaults standardUserDefaults] setValue:self.user.spaceUsed forKey:@"spaceUsed"];
+        [[NSUserDefaults standardUserDefaults] setValue:self.user.spaceAmount forKey:@"spaceAmount"];
+        [[NSUserDefaults standardUserDefaults] setValue:self.user.accessID forKey:@"accessID"];
+        [[NSUserDefaults standardUserDefaults] setValue:self.user.ticket forKey:@"ticket"];
+        [[NSUserDefaults standardUserDefaults] setValue:self.user.maxUploadSize forKey:@"maxUploadSize"];
+        [[NSUserDefaults standardUserDefaults] setValue:self.user.authToken forKey:@"authToken"];
+        
+        [self.userName setStringValue:[user login]];        
         NSString *measure = @"GB";
         long base;
         if ([user.spaceUsed longValue] <= 1024) {
@@ -124,6 +137,7 @@
     [webWindow close];
     [self fetchUserInfo];
 }
+
 -(void) fetchUserInfo
 {
     NSString *urlRequest = [[NSString alloc] initWithFormat:@"%@%@&ticket=%@",apiURL, authAction, self.user.ticket];
