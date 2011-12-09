@@ -133,7 +133,7 @@ static const NSString * BOX_API_KEY = @"7r4sye4yr5abf36m4km9i80vo9fdm2f4";
 
 + (NSString *)authenticationUrlStringForTicket:(NSString *)ticket {
 	return [NSString stringWithFormat:
-			@"https://m.box.net/api/1.0/auth/%@",
+			@"https://www.box.net/api/1.0/auth/%@",
 			ticket];
 }
 

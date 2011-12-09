@@ -34,7 +34,12 @@
 #pragma mark - Sign in
 -(IBAction)signIn:(id)sender
 {
-    BoxLoginBuilder *lb = [[BoxLoginBuilder alloc] initWithWebview:web delegate:self];
+    self.webWindow = [[WebWindow alloc] init];
+          [self.webWindow setDelegate:self];
+            [self.webWindow loadWindow];
+            [[self.webWindow window] makeKeyAndOrderFront:self];
+     //[[self.webWindow loadingDialog] startAnimation:self];
+    BoxLoginBuilder *lb = [[BoxLoginBuilder alloc] initWithWebview:self.webWindow.webView delegate:self];
     [lb startLoginProcess];
     
     
@@ -77,6 +82,7 @@
     NSLog(@"Heyyy");
 	[user save];
     NSLog(@"%@", user);
+    [webWindow close];
 	//[_flipViewController.navigationController popViewControllerAnimated:YES];
     
 }

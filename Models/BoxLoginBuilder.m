@@ -100,6 +100,7 @@ typedef enum {
 		NSLog(@"it was for the submitted form");
 		// start the authentication request
 		//[_delegate startActivityIndicator];
+        
 		[_webView setHidden:YES];
 		_authTokenOperation.ticket = _ticketOperation.ticket;
 		[_authTokenOperation start];
@@ -118,7 +119,7 @@ typedef enum {
     NSString *url = [sender mainFrameURL];
     NSRange range = [url rangeOfString:@"?"];
     NSString *subString = [url substringToIndex:NSMaxRange(range)];
-    if(![subString isEqualToString:@"https://www.box.net/api/1.0/auth/oob?"]) {
+    if([subString isEqualToString:@"https://www.box.net/api/1.0/auth/oob?"]) {
         _webViewStep = BoxLoginBuilderWebViewStepFormSubmitted;
     } else {
         _webViewStep = BoxLoginBuilderWebViewStepUserPassField;

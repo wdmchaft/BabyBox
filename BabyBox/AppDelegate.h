@@ -28,6 +28,7 @@
     NSButton *signInButton;
     NSButton *createAccountButton;
 }
+
 @property (nonatomic, retain) IBOutlet WebView *web;
 @property (assign) IBOutlet NSWindow *window;
 @property (nonatomic, retain) WebWindow *webWindow;
