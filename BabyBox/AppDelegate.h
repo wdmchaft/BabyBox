@@ -19,7 +19,8 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, WebWindowDelegate> {
     WebWindow *webWindow;
-    BoxUser *user;
+    WebView *web;
+    //BoxUser *user;
     NSTextField *usageText;
     NSProgressIndicator *usage;
     NSTextField *userName;
@@ -27,10 +28,10 @@
     NSButton *signInButton;
     NSButton *createAccountButton;
 }
-
+@property (nonatomic, retain) IBOutlet WebView *web;
 @property (assign) IBOutlet NSWindow *window;
 @property (nonatomic, retain) WebWindow *webWindow;
-@property (nonatomic, retain) BoxUser *user;
+//@property (nonatomic, retain) BoxUser *user;
 @property (nonatomic, retain) IBOutlet NSTextField *userName;
 @property (nonatomic, retain) IBOutlet NSTextField *usageText;
 @property (nonatomic, retain) IBOutlet NSProgressIndicator *usage;

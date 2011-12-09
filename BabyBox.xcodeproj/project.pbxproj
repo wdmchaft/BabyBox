@@ -13,7 +13,43 @@
 		6B2971BE14885BF900CC1229 /* right_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B2971BD14885BF900CC1229 /* right_shadow.png */; };
 		6B2971C214885D9600CC1229 /* HTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2971C114885D9600CC1229 /* HTTPRequest.m */; };
 		6B2971CD148863EC00CC1229 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2971CC148863EC00CC1229 /* XMLReader.m */; };
-		6B4754191488C05C0006B4E9 /* BoxUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B4754181488C05C0006B4E9 /* BoxUser.m */; };
+		FC72C8E414918BDB00BE2BD4 /* BoxComment.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8A314918BDB00BE2BD4 /* BoxComment.m */; };
+		FC72C8E514918BDB00BE2BD4 /* BoxFile.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8A514918BDB00BE2BD4 /* BoxFile.m */; };
+		FC72C8E614918BDB00BE2BD4 /* BoxFolder+SaveableFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8A714918BDB00BE2BD4 /* BoxFolder+SaveableFolder.m */; };
+		FC72C8E714918BDB00BE2BD4 /* BoxFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8A914918BDB00BE2BD4 /* BoxFolder.m */; };
+		FC72C8E814918BDB00BE2BD4 /* BoxObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8AB14918BDB00BE2BD4 /* BoxObject.m */; };
+		FC72C8E914918BDB00BE2BD4 /* BoxRESTApiFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8AD14918BDB00BE2BD4 /* BoxRESTApiFactory.m */; };
+		FC72C8EA14918BDB00BE2BD4 /* BoxUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8AF14918BDB00BE2BD4 /* BoxUpdate.m */; };
+		FC72C8EB14918BDB00BE2BD4 /* BoxUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8B114918BDB00BE2BD4 /* BoxUser.m */; };
+		FC72C8EC14918BDB00BE2BD4 /* BoxCommentsListModelXMLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8B414918BDB00BE2BD4 /* BoxCommentsListModelXMLBuilder.m */; };
+		FC72C8ED14918BDB00BE2BD4 /* BoxFolderXMLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8B614918BDB00BE2BD4 /* BoxFolderXMLBuilder.m */; };
+		FC72C8EE14918BDB00BE2BD4 /* BoxHTTPRequestBuilders.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8B814918BDB00BE2BD4 /* BoxHTTPRequestBuilders.m */; };
+		FC72C8EF14918BDB00BE2BD4 /* BoxUpdatesListModelXMLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8BA14918BDB00BE2BD4 /* BoxUpdatesListModelXMLBuilder.m */; };
+		FC72C8F014918BDB00BE2BD4 /* BoxAddCommentsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8BD14918BDB00BE2BD4 /* BoxAddCommentsOperation.m */; };
+		FC72C8F114918BDB00BE2BD4 /* BoxAPIOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8BF14918BDB00BE2BD4 /* BoxAPIOperation.m */; };
+		FC72C8F214918BDB00BE2BD4 /* BoxCopyOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8C114918BDB00BE2BD4 /* BoxCopyOperation.m */; };
+		FC72C8F314918BDB00BE2BD4 /* BoxCreateFolderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8C314918BDB00BE2BD4 /* BoxCreateFolderOperation.m */; };
+		FC72C8F414918BDB00BE2BD4 /* BoxDeleteCommentOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8C514918BDB00BE2BD4 /* BoxDeleteCommentOperation.m */; };
+		FC72C8F514918BDB00BE2BD4 /* BoxDeleteOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8C714918BDB00BE2BD4 /* BoxDeleteOperation.m */; };
+		FC72C8F614918BDB00BE2BD4 /* BoxDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8C914918BDB00BE2BD4 /* BoxDownloadOperation.m */; };
+		FC72C8F714918BDB00BE2BD4 /* BoxGetAuthTokenOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8CB14918BDB00BE2BD4 /* BoxGetAuthTokenOperation.m */; };
+		FC72C8F814918BDB00BE2BD4 /* BoxGetCommentsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8CD14918BDB00BE2BD4 /* BoxGetCommentsOperation.m */; };
+		FC72C8F914918BDB00BE2BD4 /* BoxGetTicketOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8CF14918BDB00BE2BD4 /* BoxGetTicketOperation.m */; };
+		FC72C8FA14918BDB00BE2BD4 /* BoxGetUpdatesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8D114918BDB00BE2BD4 /* BoxGetUpdatesOperation.m */; };
+		FC72C8FB14918BDB00BE2BD4 /* BoxMoveOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8D314918BDB00BE2BD4 /* BoxMoveOperation.m */; };
+		FC72C8FC14918BDB00BE2BD4 /* BoxNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8D514918BDB00BE2BD4 /* BoxNetworkOperation.m */; };
+		FC72C8FD14918BDB00BE2BD4 /* BoxOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8D714918BDB00BE2BD4 /* BoxOperation.m */; };
+		FC72C8FE14918BDB00BE2BD4 /* BoxPrivateShareOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8D914918BDB00BE2BD4 /* BoxPrivateShareOperation.m */; };
+		FC72C8FF14918BDB00BE2BD4 /* BoxPublicShareOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8DB14918BDB00BE2BD4 /* BoxPublicShareOperation.m */; };
+		FC72C90014918BDB00BE2BD4 /* BoxPublicUnshareOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8DD14918BDB00BE2BD4 /* BoxPublicUnshareOperation.m */; };
+		FC72C90114918BDB00BE2BD4 /* BoxRegisterOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8DF14918BDB00BE2BD4 /* BoxRegisterOperation.m */; };
+		FC72C90214918BDB00BE2BD4 /* BoxRenameOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8E114918BDB00BE2BD4 /* BoxRenameOperation.m */; };
+		FC72C90314918BDB00BE2BD4 /* BoxUploadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8E314918BDB00BE2BD4 /* BoxUploadOperation.m */; };
+		FC72C90C14918BE500BE2BD4 /* BoxModelUtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C90714918BE500BE2BD4 /* BoxModelUtilityFunctions.m */; };
+		FC72C90D14918BE500BE2BD4 /* NSArray+BoxUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C90914918BE500BE2BD4 /* NSArray+BoxUtils.m */; };
+		FC72C90E14918BE500BE2BD4 /* NSDictionaryXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C90B14918BE500BE2BD4 /* NSDictionaryXMLParser.m */; };
+		FC72C91314918BF100BE2BD4 /* GTMRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C91214918BF100BE2BD4 /* GTMRegex.m */; };
+		FC762493149192E50054AB2F /* BoxLoginBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = FC762492149192E50054AB2F /* BoxLoginBuilder.m */; };
 		FCC0127C1488461A000429C2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC0127B1488461A000429C2 /* Cocoa.framework */; };
 		FCC012861488461A000429C2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FCC012841488461A000429C2 /* InfoPlist.strings */; };
 		FCC012881488461A000429C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC012871488461A000429C2 /* main.m */; };
@@ -33,8 +69,81 @@
 		6B2971C114885D9600CC1229 /* HTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPRequest.m; sourceTree = "<group>"; };
 		6B2971CB148863EC00CC1229 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
 		6B2971CC148863EC00CC1229 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
-		6B4754171488C05C0006B4E9 /* BoxUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxUser.h; sourceTree = "<group>"; };
-		6B4754181488C05C0006B4E9 /* BoxUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxUser.m; sourceTree = "<group>"; };
+		FC72C8A214918BDB00BE2BD4 /* BoxComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxComment.h; sourceTree = "<group>"; };
+		FC72C8A314918BDB00BE2BD4 /* BoxComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxComment.m; sourceTree = "<group>"; };
+		FC72C8A414918BDB00BE2BD4 /* BoxFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxFile.h; sourceTree = "<group>"; };
+		FC72C8A514918BDB00BE2BD4 /* BoxFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxFile.m; sourceTree = "<group>"; };
+		FC72C8A614918BDB00BE2BD4 /* BoxFolder+SaveableFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BoxFolder+SaveableFolder.h"; sourceTree = "<group>"; };
+		FC72C8A714918BDB00BE2BD4 /* BoxFolder+SaveableFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BoxFolder+SaveableFolder.m"; sourceTree = "<group>"; };
+		FC72C8A814918BDB00BE2BD4 /* BoxFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxFolder.h; sourceTree = "<group>"; };
+		FC72C8A914918BDB00BE2BD4 /* BoxFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxFolder.m; sourceTree = "<group>"; };
+		FC72C8AA14918BDB00BE2BD4 /* BoxObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxObject.h; sourceTree = "<group>"; };
+		FC72C8AB14918BDB00BE2BD4 /* BoxObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxObject.m; sourceTree = "<group>"; };
+		FC72C8AC14918BDB00BE2BD4 /* BoxRESTApiFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxRESTApiFactory.h; sourceTree = "<group>"; };
+		FC72C8AD14918BDB00BE2BD4 /* BoxRESTApiFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxRESTApiFactory.m; sourceTree = "<group>"; };
+		FC72C8AE14918BDB00BE2BD4 /* BoxUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxUpdate.h; sourceTree = "<group>"; };
+		FC72C8AF14918BDB00BE2BD4 /* BoxUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxUpdate.m; sourceTree = "<group>"; };
+		FC72C8B014918BDB00BE2BD4 /* BoxUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxUser.h; sourceTree = "<group>"; };
+		FC72C8B114918BDB00BE2BD4 /* BoxUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxUser.m; sourceTree = "<group>"; };
+		FC72C8B314918BDB00BE2BD4 /* BoxCommentsListModelXMLBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxCommentsListModelXMLBuilder.h; sourceTree = "<group>"; };
+		FC72C8B414918BDB00BE2BD4 /* BoxCommentsListModelXMLBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxCommentsListModelXMLBuilder.m; sourceTree = "<group>"; };
+		FC72C8B514918BDB00BE2BD4 /* BoxFolderXMLBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxFolderXMLBuilder.h; sourceTree = "<group>"; };
+		FC72C8B614918BDB00BE2BD4 /* BoxFolderXMLBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxFolderXMLBuilder.m; sourceTree = "<group>"; };
+		FC72C8B714918BDB00BE2BD4 /* BoxHTTPRequestBuilders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxHTTPRequestBuilders.h; sourceTree = "<group>"; };
+		FC72C8B814918BDB00BE2BD4 /* BoxHTTPRequestBuilders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxHTTPRequestBuilders.m; sourceTree = "<group>"; };
+		FC72C8B914918BDB00BE2BD4 /* BoxUpdatesListModelXMLBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxUpdatesListModelXMLBuilder.h; sourceTree = "<group>"; };
+		FC72C8BA14918BDB00BE2BD4 /* BoxUpdatesListModelXMLBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxUpdatesListModelXMLBuilder.m; sourceTree = "<group>"; };
+		FC72C8BC14918BDB00BE2BD4 /* BoxAddCommentsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxAddCommentsOperation.h; sourceTree = "<group>"; };
+		FC72C8BD14918BDB00BE2BD4 /* BoxAddCommentsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxAddCommentsOperation.m; sourceTree = "<group>"; };
+		FC72C8BE14918BDB00BE2BD4 /* BoxAPIOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxAPIOperation.h; sourceTree = "<group>"; };
+		FC72C8BF14918BDB00BE2BD4 /* BoxAPIOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxAPIOperation.m; sourceTree = "<group>"; };
+		FC72C8C014918BDB00BE2BD4 /* BoxCopyOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxCopyOperation.h; sourceTree = "<group>"; };
+		FC72C8C114918BDB00BE2BD4 /* BoxCopyOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxCopyOperation.m; sourceTree = "<group>"; };
+		FC72C8C214918BDB00BE2BD4 /* BoxCreateFolderOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxCreateFolderOperation.h; sourceTree = "<group>"; };
+		FC72C8C314918BDB00BE2BD4 /* BoxCreateFolderOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxCreateFolderOperation.m; sourceTree = "<group>"; };
+		FC72C8C414918BDB00BE2BD4 /* BoxDeleteCommentOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxDeleteCommentOperation.h; sourceTree = "<group>"; };
+		FC72C8C514918BDB00BE2BD4 /* BoxDeleteCommentOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxDeleteCommentOperation.m; sourceTree = "<group>"; };
+		FC72C8C614918BDB00BE2BD4 /* BoxDeleteOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxDeleteOperation.h; sourceTree = "<group>"; };
+		FC72C8C714918BDB00BE2BD4 /* BoxDeleteOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxDeleteOperation.m; sourceTree = "<group>"; };
+		FC72C8C814918BDB00BE2BD4 /* BoxDownloadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxDownloadOperation.h; sourceTree = "<group>"; };
+		FC72C8C914918BDB00BE2BD4 /* BoxDownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxDownloadOperation.m; sourceTree = "<group>"; };
+		FC72C8CA14918BDB00BE2BD4 /* BoxGetAuthTokenOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxGetAuthTokenOperation.h; sourceTree = "<group>"; };
+		FC72C8CB14918BDB00BE2BD4 /* BoxGetAuthTokenOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxGetAuthTokenOperation.m; sourceTree = "<group>"; };
+		FC72C8CC14918BDB00BE2BD4 /* BoxGetCommentsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxGetCommentsOperation.h; sourceTree = "<group>"; };
+		FC72C8CD14918BDB00BE2BD4 /* BoxGetCommentsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxGetCommentsOperation.m; sourceTree = "<group>"; };
+		FC72C8CE14918BDB00BE2BD4 /* BoxGetTicketOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxGetTicketOperation.h; sourceTree = "<group>"; };
+		FC72C8CF14918BDB00BE2BD4 /* BoxGetTicketOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxGetTicketOperation.m; sourceTree = "<group>"; };
+		FC72C8D014918BDB00BE2BD4 /* BoxGetUpdatesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxGetUpdatesOperation.h; sourceTree = "<group>"; };
+		FC72C8D114918BDB00BE2BD4 /* BoxGetUpdatesOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxGetUpdatesOperation.m; sourceTree = "<group>"; };
+		FC72C8D214918BDB00BE2BD4 /* BoxMoveOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxMoveOperation.h; sourceTree = "<group>"; };
+		FC72C8D314918BDB00BE2BD4 /* BoxMoveOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxMoveOperation.m; sourceTree = "<group>"; };
+		FC72C8D414918BDB00BE2BD4 /* BoxNetworkOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxNetworkOperation.h; sourceTree = "<group>"; };
+		FC72C8D514918BDB00BE2BD4 /* BoxNetworkOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxNetworkOperation.m; sourceTree = "<group>"; };
+		FC72C8D614918BDB00BE2BD4 /* BoxOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxOperation.h; sourceTree = "<group>"; };
+		FC72C8D714918BDB00BE2BD4 /* BoxOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxOperation.m; sourceTree = "<group>"; };
+		FC72C8D814918BDB00BE2BD4 /* BoxPrivateShareOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxPrivateShareOperation.h; sourceTree = "<group>"; };
+		FC72C8D914918BDB00BE2BD4 /* BoxPrivateShareOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxPrivateShareOperation.m; sourceTree = "<group>"; };
+		FC72C8DA14918BDB00BE2BD4 /* BoxPublicShareOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxPublicShareOperation.h; sourceTree = "<group>"; };
+		FC72C8DB14918BDB00BE2BD4 /* BoxPublicShareOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxPublicShareOperation.m; sourceTree = "<group>"; };
+		FC72C8DC14918BDB00BE2BD4 /* BoxPublicUnshareOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxPublicUnshareOperation.h; sourceTree = "<group>"; };
+		FC72C8DD14918BDB00BE2BD4 /* BoxPublicUnshareOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxPublicUnshareOperation.m; sourceTree = "<group>"; };
+		FC72C8DE14918BDB00BE2BD4 /* BoxRegisterOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxRegisterOperation.h; sourceTree = "<group>"; };
+		FC72C8DF14918BDB00BE2BD4 /* BoxRegisterOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxRegisterOperation.m; sourceTree = "<group>"; };
+		FC72C8E014918BDB00BE2BD4 /* BoxRenameOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxRenameOperation.h; sourceTree = "<group>"; };
+		FC72C8E114918BDB00BE2BD4 /* BoxRenameOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxRenameOperation.m; sourceTree = "<group>"; };
+		FC72C8E214918BDB00BE2BD4 /* BoxUploadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxUploadOperation.h; sourceTree = "<group>"; };
+		FC72C8E314918BDB00BE2BD4 /* BoxUploadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxUploadOperation.m; sourceTree = "<group>"; };
+		FC72C90614918BE500BE2BD4 /* BoxModelUtilityFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxModelUtilityFunctions.h; sourceTree = "<group>"; };
+		FC72C90714918BE500BE2BD4 /* BoxModelUtilityFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxModelUtilityFunctions.m; sourceTree = "<group>"; };
+		FC72C90814918BE500BE2BD4 /* NSArray+BoxUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+BoxUtils.h"; sourceTree = "<group>"; };
+		FC72C90914918BE500BE2BD4 /* NSArray+BoxUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+BoxUtils.m"; sourceTree = "<group>"; };
+		FC72C90A14918BE500BE2BD4 /* NSDictionaryXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionaryXMLParser.h; sourceTree = "<group>"; };
+		FC72C90B14918BE500BE2BD4 /* NSDictionaryXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionaryXMLParser.m; sourceTree = "<group>"; };
+		FC72C91014918BF100BE2BD4 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		FC72C91114918BF100BE2BD4 /* GTMRegex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMRegex.h; sourceTree = "<group>"; };
+		FC72C91214918BF100BE2BD4 /* GTMRegex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMRegex.m; sourceTree = "<group>"; };
+		FC762491149192E50054AB2F /* BoxLoginBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxLoginBuilder.h; sourceTree = "<group>"; };
+		FC762492149192E50054AB2F /* BoxLoginBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxLoginBuilder.m; sourceTree = "<group>"; };
 		FCC012771488461A000429C2 /* BabyBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabyBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCC0127B1488461A000429C2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		FCC0127E1488461A000429C2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -101,19 +210,124 @@
 			name = XMLReader;
 			sourceTree = "<group>";
 		};
-		6B4754161488C0460006B4E9 /* BoxUser */ = {
+		FC72C8A114918BDB00BE2BD4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				6B4754171488C05C0006B4E9 /* BoxUser.h */,
-				6B4754181488C05C0006B4E9 /* BoxUser.m */,
+				FC762491149192E50054AB2F /* BoxLoginBuilder.h */,
+				FC762492149192E50054AB2F /* BoxLoginBuilder.m */,
+				FC72C8A214918BDB00BE2BD4 /* BoxComment.h */,
+				FC72C8A314918BDB00BE2BD4 /* BoxComment.m */,
+				FC72C8A414918BDB00BE2BD4 /* BoxFile.h */,
+				FC72C8A514918BDB00BE2BD4 /* BoxFile.m */,
+				FC72C8A614918BDB00BE2BD4 /* BoxFolder+SaveableFolder.h */,
+				FC72C8A714918BDB00BE2BD4 /* BoxFolder+SaveableFolder.m */,
+				FC72C8A814918BDB00BE2BD4 /* BoxFolder.h */,
+				FC72C8A914918BDB00BE2BD4 /* BoxFolder.m */,
+				FC72C8AA14918BDB00BE2BD4 /* BoxObject.h */,
+				FC72C8AB14918BDB00BE2BD4 /* BoxObject.m */,
+				FC72C8AC14918BDB00BE2BD4 /* BoxRESTApiFactory.h */,
+				FC72C8AD14918BDB00BE2BD4 /* BoxRESTApiFactory.m */,
+				FC72C8AE14918BDB00BE2BD4 /* BoxUpdate.h */,
+				FC72C8AF14918BDB00BE2BD4 /* BoxUpdate.m */,
+				FC72C8B014918BDB00BE2BD4 /* BoxUser.h */,
+				FC72C8B114918BDB00BE2BD4 /* BoxUser.m */,
+				FC72C8B214918BDB00BE2BD4 /* Builders */,
+				FC72C8BB14918BDB00BE2BD4 /* Operations */,
 			);
-			name = BoxUser;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FC72C8B214918BDB00BE2BD4 /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				FC72C8B314918BDB00BE2BD4 /* BoxCommentsListModelXMLBuilder.h */,
+				FC72C8B414918BDB00BE2BD4 /* BoxCommentsListModelXMLBuilder.m */,
+				FC72C8B514918BDB00BE2BD4 /* BoxFolderXMLBuilder.h */,
+				FC72C8B614918BDB00BE2BD4 /* BoxFolderXMLBuilder.m */,
+				FC72C8B714918BDB00BE2BD4 /* BoxHTTPRequestBuilders.h */,
+				FC72C8B814918BDB00BE2BD4 /* BoxHTTPRequestBuilders.m */,
+				FC72C8B914918BDB00BE2BD4 /* BoxUpdatesListModelXMLBuilder.h */,
+				FC72C8BA14918BDB00BE2BD4 /* BoxUpdatesListModelXMLBuilder.m */,
+			);
+			path = Builders;
+			sourceTree = "<group>";
+		};
+		FC72C8BB14918BDB00BE2BD4 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				FC72C8BC14918BDB00BE2BD4 /* BoxAddCommentsOperation.h */,
+				FC72C8BD14918BDB00BE2BD4 /* BoxAddCommentsOperation.m */,
+				FC72C8BE14918BDB00BE2BD4 /* BoxAPIOperation.h */,
+				FC72C8BF14918BDB00BE2BD4 /* BoxAPIOperation.m */,
+				FC72C8C014918BDB00BE2BD4 /* BoxCopyOperation.h */,
+				FC72C8C114918BDB00BE2BD4 /* BoxCopyOperation.m */,
+				FC72C8C214918BDB00BE2BD4 /* BoxCreateFolderOperation.h */,
+				FC72C8C314918BDB00BE2BD4 /* BoxCreateFolderOperation.m */,
+				FC72C8C414918BDB00BE2BD4 /* BoxDeleteCommentOperation.h */,
+				FC72C8C514918BDB00BE2BD4 /* BoxDeleteCommentOperation.m */,
+				FC72C8C614918BDB00BE2BD4 /* BoxDeleteOperation.h */,
+				FC72C8C714918BDB00BE2BD4 /* BoxDeleteOperation.m */,
+				FC72C8C814918BDB00BE2BD4 /* BoxDownloadOperation.h */,
+				FC72C8C914918BDB00BE2BD4 /* BoxDownloadOperation.m */,
+				FC72C8CA14918BDB00BE2BD4 /* BoxGetAuthTokenOperation.h */,
+				FC72C8CB14918BDB00BE2BD4 /* BoxGetAuthTokenOperation.m */,
+				FC72C8CC14918BDB00BE2BD4 /* BoxGetCommentsOperation.h */,
+				FC72C8CD14918BDB00BE2BD4 /* BoxGetCommentsOperation.m */,
+				FC72C8CE14918BDB00BE2BD4 /* BoxGetTicketOperation.h */,
+				FC72C8CF14918BDB00BE2BD4 /* BoxGetTicketOperation.m */,
+				FC72C8D014918BDB00BE2BD4 /* BoxGetUpdatesOperation.h */,
+				FC72C8D114918BDB00BE2BD4 /* BoxGetUpdatesOperation.m */,
+				FC72C8D214918BDB00BE2BD4 /* BoxMoveOperation.h */,
+				FC72C8D314918BDB00BE2BD4 /* BoxMoveOperation.m */,
+				FC72C8D414918BDB00BE2BD4 /* BoxNetworkOperation.h */,
+				FC72C8D514918BDB00BE2BD4 /* BoxNetworkOperation.m */,
+				FC72C8D614918BDB00BE2BD4 /* BoxOperation.h */,
+				FC72C8D714918BDB00BE2BD4 /* BoxOperation.m */,
+				FC72C8D814918BDB00BE2BD4 /* BoxPrivateShareOperation.h */,
+				FC72C8D914918BDB00BE2BD4 /* BoxPrivateShareOperation.m */,
+				FC72C8DA14918BDB00BE2BD4 /* BoxPublicShareOperation.h */,
+				FC72C8DB14918BDB00BE2BD4 /* BoxPublicShareOperation.m */,
+				FC72C8DC14918BDB00BE2BD4 /* BoxPublicUnshareOperation.h */,
+				FC72C8DD14918BDB00BE2BD4 /* BoxPublicUnshareOperation.m */,
+				FC72C8DE14918BDB00BE2BD4 /* BoxRegisterOperation.h */,
+				FC72C8DF14918BDB00BE2BD4 /* BoxRegisterOperation.m */,
+				FC72C8E014918BDB00BE2BD4 /* BoxRenameOperation.h */,
+				FC72C8E114918BDB00BE2BD4 /* BoxRenameOperation.m */,
+				FC72C8E214918BDB00BE2BD4 /* BoxUploadOperation.h */,
+				FC72C8E314918BDB00BE2BD4 /* BoxUploadOperation.m */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		FC72C90514918BE500BE2BD4 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FC72C90614918BE500BE2BD4 /* BoxModelUtilityFunctions.h */,
+				FC72C90714918BE500BE2BD4 /* BoxModelUtilityFunctions.m */,
+				FC72C90814918BE500BE2BD4 /* NSArray+BoxUtils.h */,
+				FC72C90914918BE500BE2BD4 /* NSArray+BoxUtils.m */,
+				FC72C90A14918BE500BE2BD4 /* NSDictionaryXMLParser.h */,
+				FC72C90B14918BE500BE2BD4 /* NSDictionaryXMLParser.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		FC72C90F14918BF100BE2BD4 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				FC72C91014918BF100BE2BD4 /* GTMDefines.h */,
+				FC72C91114918BF100BE2BD4 /* GTMRegex.h */,
+				FC72C91214918BF100BE2BD4 /* GTMRegex.m */,
+			);
+			path = Vendor;
 			sourceTree = "<group>";
 		};
 		FCC0126C1488461A000429C2 = {
 			isa = PBXGroup;
 			children = (
-				6B4754161488C0460006B4E9 /* BoxUser */,
+				FC72C8A114918BDB00BE2BD4 /* Models */,
+				FC72C90514918BE500BE2BD4 /* Utilities */,
+				FC72C90F14918BF100BE2BD4 /* Vendor */,
 				6B1C27BE1488A88600975EBE /* WebWindow */,
 				6B2971C414885FE800CC1229 /* XMLReader */,
 				6B2971BF14885D7600CC1229 /* HTTPRequest */,
@@ -247,7 +461,43 @@
 				6B2971C214885D9600CC1229 /* HTTPRequest.m in Sources */,
 				6B2971CD148863EC00CC1229 /* XMLReader.m in Sources */,
 				6B1C27C11488A8A600975EBE /* WebWindow.m in Sources */,
-				6B4754191488C05C0006B4E9 /* BoxUser.m in Sources */,
+				FC72C8E414918BDB00BE2BD4 /* BoxComment.m in Sources */,
+				FC72C8E514918BDB00BE2BD4 /* BoxFile.m in Sources */,
+				FC72C8E614918BDB00BE2BD4 /* BoxFolder+SaveableFolder.m in Sources */,
+				FC72C8E714918BDB00BE2BD4 /* BoxFolder.m in Sources */,
+				FC72C8E814918BDB00BE2BD4 /* BoxObject.m in Sources */,
+				FC72C8E914918BDB00BE2BD4 /* BoxRESTApiFactory.m in Sources */,
+				FC72C8EA14918BDB00BE2BD4 /* BoxUpdate.m in Sources */,
+				FC72C8EB14918BDB00BE2BD4 /* BoxUser.m in Sources */,
+				FC72C8EC14918BDB00BE2BD4 /* BoxCommentsListModelXMLBuilder.m in Sources */,
+				FC72C8ED14918BDB00BE2BD4 /* BoxFolderXMLBuilder.m in Sources */,
+				FC72C8EE14918BDB00BE2BD4 /* BoxHTTPRequestBuilders.m in Sources */,
+				FC72C8EF14918BDB00BE2BD4 /* BoxUpdatesListModelXMLBuilder.m in Sources */,
+				FC72C8F014918BDB00BE2BD4 /* BoxAddCommentsOperation.m in Sources */,
+				FC72C8F114918BDB00BE2BD4 /* BoxAPIOperation.m in Sources */,
+				FC72C8F214918BDB00BE2BD4 /* BoxCopyOperation.m in Sources */,
+				FC72C8F314918BDB00BE2BD4 /* BoxCreateFolderOperation.m in Sources */,
+				FC72C8F414918BDB00BE2BD4 /* BoxDeleteCommentOperation.m in Sources */,
+				FC72C8F514918BDB00BE2BD4 /* BoxDeleteOperation.m in Sources */,
+				FC72C8F614918BDB00BE2BD4 /* BoxDownloadOperation.m in Sources */,
+				FC72C8F714918BDB00BE2BD4 /* BoxGetAuthTokenOperation.m in Sources */,
+				FC72C8F814918BDB00BE2BD4 /* BoxGetCommentsOperation.m in Sources */,
+				FC72C8F914918BDB00BE2BD4 /* BoxGetTicketOperation.m in Sources */,
+				FC72C8FA14918BDB00BE2BD4 /* BoxGetUpdatesOperation.m in Sources */,
+				FC72C8FB14918BDB00BE2BD4 /* BoxMoveOperation.m in Sources */,
+				FC72C8FC14918BDB00BE2BD4 /* BoxNetworkOperation.m in Sources */,
+				FC72C8FD14918BDB00BE2BD4 /* BoxOperation.m in Sources */,
+				FC72C8FE14918BDB00BE2BD4 /* BoxPrivateShareOperation.m in Sources */,
+				FC72C8FF14918BDB00BE2BD4 /* BoxPublicShareOperation.m in Sources */,
+				FC72C90014918BDB00BE2BD4 /* BoxPublicUnshareOperation.m in Sources */,
+				FC72C90114918BDB00BE2BD4 /* BoxRegisterOperation.m in Sources */,
+				FC72C90214918BDB00BE2BD4 /* BoxRenameOperation.m in Sources */,
+				FC72C90314918BDB00BE2BD4 /* BoxUploadOperation.m in Sources */,
+				FC72C90C14918BE500BE2BD4 /* BoxModelUtilityFunctions.m in Sources */,
+				FC72C90D14918BE500BE2BD4 /* NSArray+BoxUtils.m in Sources */,
+				FC72C90E14918BE500BE2BD4 /* NSDictionaryXMLParser.m in Sources */,
+				FC72C91314918BF100BE2BD4 /* GTMRegex.m in Sources */,
+				FC762493149192E50054AB2F /* BoxLoginBuilder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
