@@ -13,6 +13,8 @@
 		6B2971BE14885BF900CC1229 /* right_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B2971BD14885BF900CC1229 /* right_shadow.png */; };
 		6B2971C214885D9600CC1229 /* HTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2971C114885D9600CC1229 /* HTTPRequest.m */; };
 		6B2971CD148863EC00CC1229 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2971CC148863EC00CC1229 /* XMLReader.m */; };
+		6B4843961496E078005AFA32 /* BoxUser.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B4843951496E078005AFA32 /* BoxUser.plist */; };
+		6B48439A1496FCA7005AFA32 /* BoxGetUserInfoOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B4843991496FCA7005AFA32 /* BoxGetUserInfoOperation.m */; };
 		FC72C8E414918BDB00BE2BD4 /* BoxComment.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8A314918BDB00BE2BD4 /* BoxComment.m */; };
 		FC72C8E514918BDB00BE2BD4 /* BoxFile.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8A514918BDB00BE2BD4 /* BoxFile.m */; };
 		FC72C8E614918BDB00BE2BD4 /* BoxFolder+SaveableFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8A714918BDB00BE2BD4 /* BoxFolder+SaveableFolder.m */; };
@@ -69,6 +71,9 @@
 		6B2971C114885D9600CC1229 /* HTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPRequest.m; sourceTree = "<group>"; };
 		6B2971CB148863EC00CC1229 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
 		6B2971CC148863EC00CC1229 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
+		6B4843951496E078005AFA32 /* BoxUser.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BoxUser.plist; sourceTree = "<group>"; };
+		6B4843981496FCA7005AFA32 /* BoxGetUserInfoOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxGetUserInfoOperation.h; sourceTree = "<group>"; };
+		6B4843991496FCA7005AFA32 /* BoxGetUserInfoOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxGetUserInfoOperation.m; sourceTree = "<group>"; };
 		FC72C8A214918BDB00BE2BD4 /* BoxComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxComment.h; sourceTree = "<group>"; };
 		FC72C8A314918BDB00BE2BD4 /* BoxComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxComment.m; sourceTree = "<group>"; };
 		FC72C8A414918BDB00BE2BD4 /* BoxFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxFile.h; sourceTree = "<group>"; };
@@ -271,6 +276,8 @@
 				FC72C8C914918BDB00BE2BD4 /* BoxDownloadOperation.m */,
 				FC72C8CA14918BDB00BE2BD4 /* BoxGetAuthTokenOperation.h */,
 				FC72C8CB14918BDB00BE2BD4 /* BoxGetAuthTokenOperation.m */,
+				6B4843981496FCA7005AFA32 /* BoxGetUserInfoOperation.h */,
+				6B4843991496FCA7005AFA32 /* BoxGetUserInfoOperation.m */,
 				FC72C8CC14918BDB00BE2BD4 /* BoxGetCommentsOperation.h */,
 				FC72C8CD14918BDB00BE2BD4 /* BoxGetCommentsOperation.m */,
 				FC72C8CE14918BDB00BE2BD4 /* BoxGetTicketOperation.h */,
@@ -325,6 +332,7 @@
 		FCC0126C1488461A000429C2 = {
 			isa = PBXGroup;
 			children = (
+				6B4843951496E078005AFA32 /* BoxUser.plist */,
 				FC72C8A114918BDB00BE2BD4 /* Models */,
 				FC72C90514918BE500BE2BD4 /* Utilities */,
 				FC72C90F14918BF100BE2BD4 /* Vendor */,
@@ -446,6 +454,7 @@
 				6B2971BC148859EE00CC1229 /* box_logo.gif in Resources */,
 				6B2971BE14885BF900CC1229 /* right_shadow.png in Resources */,
 				6B1C27BD14889B4F00975EBE /* WebWindow.xib in Resources */,
+				6B4843961496E078005AFA32 /* BoxUser.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +507,7 @@
 				FC72C90E14918BE500BE2BD4 /* NSDictionaryXMLParser.m in Sources */,
 				FC72C91314918BF100BE2BD4 /* GTMRegex.m in Sources */,
 				FC762493149192E50054AB2F /* BoxLoginBuilder.m in Sources */,
+				6B48439A1496FCA7005AFA32 /* BoxGetUserInfoOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

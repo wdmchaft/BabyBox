@@ -115,4 +115,7 @@
 								 targetID:(int)targetID
 								  newName:(NSString *)newName;
 
++ (NSString *)getUserInfo:(NSString *)authToken;
+                    
+
 @end

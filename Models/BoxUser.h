@@ -60,6 +60,7 @@
 
 + (BoxUser *)savedUser;
 + (BOOL)clearSavedUser;
++(void)updateUserInfo:(BoxUser *)myUser;
 
 - (NSDictionary *)attributesDictionary;
 - (NSArray *)attributeNames;

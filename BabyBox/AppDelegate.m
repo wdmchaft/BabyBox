@@ -10,6 +10,7 @@
 #import "HTTPRequest.h"
 #import "XMLReader.h"
 #import "BoxLoginBuilder.h"
+#import "BoxModelUtilityFunctions.h"
 //#import "BoxCommonUISetup.h"
 
 @implementation AppDelegate
@@ -28,44 +29,52 @@
 }
 
 - (void) awakeFromNib {
-
+    
+    BoxUser *user = [BoxUser savedUser];
+    
+    if(user == nil)
+    {
+        //do nothing
+    }
+    else
+    {
+        [userName setStringValue:[user userName]];
+        [signInButton setTitle:@"Sign Out"];
+        [createAccountButton setHidden:YES];
+        
+        //Move later
+        [BoxUser updateUserInfo:[BoxUser savedUser]];
+        
+        [self updateUsage:[BoxUser savedUser]9hsGV2L5
+         ];
+    }
+    
 }
 
 #pragma mark - Sign in
 -(IBAction)signIn:(id)sender
 {
-    self.webWindow = [[WebWindow alloc] init];
-          [self.webWindow setDelegate:self];
-            [self.webWindow loadWindow];
-            [[self.webWindow window] makeKeyAndOrderFront:self];
-     //[[self.webWindow loadingDialog] startAnimation:self];
-    BoxLoginBuilder *lb = [[BoxLoginBuilder alloc] initWithWebview:self.webWindow.webView delegate:self];
-    [lb startLoginProcess];
     
-    
-//    if([((NSButton *)sender).title isEqualToString:@"Sign In"])
-//    {
-//        self.user = [[BoxUser alloc] init];
-//        
-//        self.webWindow = [[WebWindow alloc] init];
-//        [self.webWindow setDelegate:self];
-//        [self.webWindow loadWindow];
-//        [[self.webWindow window] makeKeyAndOrderFront:self];
-//        [[self.webWindow loadingDialog] startAnimation:self];
-//        
-//        //Sign user into Box.net
-//        HTTPRequest *request = [[HTTPRequest alloc] init];
-//        [request setDelegate:self];
-//        [request startRequest:[NSString stringWithFormat:@"%@%@",apiURL, ticketAction] animated:YES];
-//        [request release]; 
-//    }
-//    else
-//    {
-//        //sign out
-//        [signInButton setTitle:@"Sign In"];
-//        [createAccountButton setHidden:NO];
-//        [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"authToken"];
-//    }
+    if([((NSButton *)sender).title isEqualToString:@"Sign In"])
+    {
+        self.webWindow = [[WebWindow alloc] init];
+        [self.webWindow setDelegate:self];
+        [self.webWindow loadWindow];
+        [[self.webWindow window] makeKeyAndOrderFront:self];
+        //[[self.webWindow loadingDialog] startAnimation:self];
+        BoxLoginBuilder *lb = [[BoxLoginBuilder alloc] initWithWebview:self.webWindow.webView delegate:self];
+        [lb startLoginProcess];
+    }
+    else
+    {
+        //sign out
+        [BoxUser clearSavedUser];
+        [userName setStringValue:@""];
+        [signInButton setTitle:@"Sign In"];
+        [createAccountButton setHidden:NO];
+        [usageText setHidden:YES];
+        [usage setHidden:YES];
+    }
 }
 
 -(IBAction)createAccount:(id)sender
@@ -83,6 +92,10 @@
 	[user save];
     NSLog(@"%@", user);
     [webWindow close];
+    [signInButton setTitle:@"Sign Out"];
+    [createAccountButton setHidden:YES];
+    [userName setStringValue:[user userName]];
+    [self updateUsage:user];
 	//[_flipViewController.navigationController popViewControllerAnimated:YES];
     
 }
@@ -268,5 +281,17 @@
     }
 }
     
+#pragma mark - Storage Usage Functions
+
+-(void) updateUsage:(BoxUser *)user
+{
+    NSString *spaceUsed = [BoxModelUtilityFunctions getFileFolderSizeString:[user storageUsed]];
+    NSString *spaceQuota = [BoxModelUtilityFunctions getFileFolderSizeString:[user storageQuota]];
+    
+    [usageText setStringValue:[NSString stringWithFormat:@"%@ of %@", spaceUsed, spaceQuota]];
+    [usage setMaxValue:[[user storageQuota] doubleValue]];
+    [usage setDoubleValue:[[user storageUsed] doubleValue]];
+
+} 
 
 @end

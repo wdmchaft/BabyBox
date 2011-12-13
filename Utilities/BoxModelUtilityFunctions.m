@@ -24,7 +24,11 @@
 	NSString *result_str = nil;
 	long long fileSize = [_fileSize longLongValue];
 
-	if (fileSize > 1000000) {
+    if (fileSize > 1024*1024*1024) {
+		double dSize = fileSize / 1073741824.0f;
+		result_str = [NSString stringWithFormat: @"%1.1f GB", dSize];
+    }
+	else if (fileSize > 1000000) {
 		double dSize = fileSize / 1000000.0f;
 		result_str = [NSString stringWithFormat: @"%1.1f MB", dSize];
 	} else if (fileSize > 1000) {

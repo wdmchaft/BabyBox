@@ -16,6 +16,7 @@
 //
 
 #import "BoxUser.h"
+#import "BoxGetUserInfoOperation.h"
 
 @interface BoxUser()
 
@@ -38,7 +39,8 @@
 @synthesize storageQuota = _storageQuota;
 @synthesize storageUsed = _storageUsed;
 
-#define BOX_USER_MODEL_ACCOUNT_PLIST @"/Documents/boxNetSavedAccountInfo.plist"
+//#define BOX_USER_MODEL_ACCOUNT_PLIST @"/Documents/boxNetSavedAccountInfo.plist"
+#define BOX_USER_MODEL_ACCOUNT_PLIST @"BoxUser.plist"
 
 #pragma mark Initialization
 
@@ -60,6 +62,19 @@
 
 	return [user autorelease];
 }
+
++(void)updateUserInfo:(BoxUser *)myUser {
+    BoxGetUserInfoOperation *opt = [[BoxGetUserInfoOperation alloc] initWithAuthToken:[myUser authToken] delegate:self];
+    [opt start];
+}
+
+#pragma -
+#pragma Operation Delegate
+- (void)operation:(BoxOperation *)op didCompleteForPath:(NSString *)path response:(BoxOperationResponse)response {
+    NSLog(@"%@", path);
+	NSLog(@"%d", response);
+}
+
 
 #pragma mark -
 #pragma mark Saving and Loading from Disk
@@ -86,33 +101,68 @@
 }
 
 - (BOOL)save {
-	return [self saveDictionary:[self attributesDictionary]];
+     //	return [self saveDictionary:[self attributesDictionary]];
+     [[NSUserDefaults standardUserDefaults] setValue:[_userId stringValue] forKey:@"userId"];
+     [[NSUserDefaults standardUserDefaults] setValue:_userName forKey:@"userName"];
+     [[NSUserDefaults standardUserDefaults] setValue:_email forKey:@"email"];
+     [[NSUserDefaults standardUserDefaults] setValue:[_storageUsed stringValue] forKey:@"storageUsed"];
+     [[NSUserDefaults standardUserDefaults] setValue:[_storageQuota stringValue] forKey:@"storageQuota"];
+     [[NSUserDefaults standardUserDefaults] setValue:[_accessId stringValue] forKey:@"accessId"];
+     [[NSUserDefaults standardUserDefaults] setValue:[_maxUploadSize stringValue] forKey:@"maxUploadSize"];
+     [[NSUserDefaults standardUserDefaults] setValue:_authToken forKey:@"authToken"];
+    
+    return YES;
 }
 
 - (void)clear {
-	NSArray *attributes = [self attributeNames];
-	for (NSString *attribute in attributes) {
-		NSString *capitalizedString = [attribute stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:[[attribute substringToIndex:1] capitalizedString]];
-		NSString *selectorString = [NSString stringWithFormat:@"set%@:", capitalizedString];
-		[self performSelector:NSSelectorFromString(selectorString) withObject:nil];
-	}
+//	NSArray *attributes = [self attributeNames];
+//	for (NSString *attribute in attributes) {
+//		NSString *capitalizedString = [attribute stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:[[attribute substringToIndex:1] capitalizedString]];
+//		NSString *selectorString = [NSString stringWithFormat:@"set%@:", capitalizedString];
+//		[self performSelector:NSSelectorFromString(selectorString) withObject:nil];
+//	}
+    
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"userId"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"userName"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"email"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"storageUsed"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"storageQuota"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"accessId"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"maxUploadSize"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"authToken"];
 }
 
 - (BOOL)loadFromDisk {
-	NSString *fileLocation = [NSHomeDirectory() stringByAppendingPathComponent:BOX_USER_MODEL_ACCOUNT_PLIST];
-	NSError *err = nil;
-	NSString *pList = [NSString stringWithContentsOfFile:fileLocation
-												encoding:NSUTF8StringEncoding
-												   error:&err];
-	if (!err) {
-		NSDictionary * dict = [pList propertyList];
-		if (dict) {
-			[self loadFromDictionary:dict];
-			return YES;
-		}
-	}
-
-	return NO;
+//	NSString *fileLocation = [NSHomeDirectory() stringByAppendingPathComponent:BOX_USER_MODEL_ACCOUNT_PLIST];
+//	NSError *err = nil;
+//	NSString *pList = [NSString stringWithContentsOfFile:fileLocation
+//												encoding:NSUTF8StringEncoding
+//												   error:&err];
+//	if (!err) {
+//		NSDictionary * dict = [pList propertyList];
+//		if (dict) {
+//			[self loadFromDictionary:dict];
+//			return YES;
+//		}
+//	}
+//
+//	return NO;
+    NSNumberFormatter *numberFormatter = [[[NSNumberFormatter alloc] init] autorelease];
+	[numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    
+    self.userName = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
+	self.email = [[NSUserDefaults standardUserDefaults] objectForKey:@"email"];
+	self.userId = [numberFormatter numberFromString:[[NSUserDefaults standardUserDefaults] objectForKey:@"userId"]];
+	self.accessId = [numberFormatter numberFromString:[[NSUserDefaults standardUserDefaults] objectForKey:@"accessId"]];
+	self.authToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"authToken"];
+	self.storageQuota = [numberFormatter numberFromString:[[NSUserDefaults standardUserDefaults] objectForKey:@"storageQuota"]];
+	self.storageUsed = [numberFormatter numberFromString:[[NSUserDefaults standardUserDefaults] objectForKey:@"storageUsed"]];
+	self.maxUploadSize = [numberFormatter numberFromString:[[NSUserDefaults standardUserDefaults] objectForKey:@"maxUploadSize"]];
+    
+    if(_authToken == nil)
+        return NO;
+    else
+        return YES;
 }
 
 #pragma mark -
@@ -191,6 +241,6 @@
 }
 
 -(NSString *)description {
-    return self.userName;
+    return [NSString stringWithFormat:@"User: %@ Token: %@",self.userName, self.authToken];
 }
 @end

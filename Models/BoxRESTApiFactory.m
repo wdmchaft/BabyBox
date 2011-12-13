@@ -350,5 +350,13 @@ static const NSString * BOX_API_KEY = @"7r4sye4yr5abf36m4km9i80vo9fdm2f4";
 			encodedName];
 }
 
-
++ (NSString *)getUserInfo:(NSString *)authToken
+{
+    NSString *urlString = [NSString stringWithFormat:
+						   @"https://www.box.net/api/1.0/rest?action=get_account_info&api_key=%@&auth_token=%@",
+						   BOX_API_KEY,
+						   authToken];
+    
+	return urlString;
+}
 @end

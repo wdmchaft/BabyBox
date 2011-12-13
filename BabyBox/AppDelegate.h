@@ -46,4 +46,5 @@
 -(void)fetchUserInfo;
 -(void)createBoxFolder;
 -(void)alertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo;
+-(void)updateUsage:(BoxUser *)user;
 @end
