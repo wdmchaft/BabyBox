@@ -17,6 +17,7 @@
 
 #import "BoxGetUserInfoOperation.h"
 #import "BoxUser.h"
+#import "AppDelegate.h"
 
 @implementation BoxGetUserInfoOperation
 
@@ -32,9 +33,10 @@
 - (id)initWithAuthToken:(NSString *)authToken
 			delegate:(id<BoxOperationDelegate>)delegate
 {
-	if ((self = [super initForType:BoxOperationTypeGetTicket delegate:delegate])) {
+	if ((self = [super initForType:BoxOperationSimpleHTTPRequest delegate:delegate])) {
 		self.user = nil;
 		self.token = authToken;
+        self.delegate = delegate;
 	}
     
 	return self;
@@ -63,6 +65,7 @@
 	if ([[result objectForKey:@"status"] isEqual:[self successCode]]) {
 		NSDictionary *userInfo = [result objectForKey:@"user"];
 		self.user = [BoxUser userWithAttributes:userInfo];
+        [(AppDelegate *)self.delegate updateUsage:self.user];
     }
     
 	[super processResult:result];

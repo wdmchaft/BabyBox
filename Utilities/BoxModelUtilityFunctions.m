@@ -27,12 +27,11 @@
     if (fileSize > 1024*1024*1024) {
 		double dSize = fileSize / 1073741824.0f;
 		result_str = [NSString stringWithFormat: @"%1.1f GB", dSize];
-    }
-	else if (fileSize > 1000000) {
-		double dSize = fileSize / 1000000.0f;
+    } else if (fileSize > 1024*1024) {
+		double dSize = fileSize / 1048576.0f;
 		result_str = [NSString stringWithFormat: @"%1.1f MB", dSize];
-	} else if (fileSize > 1000) {
-		double dSize = fileSize / 1000.0f;
+	} else if (fileSize > 1024) {
+		double dSize = fileSize / 1024.0f;
 		result_str = [NSString stringWithFormat: @"%1.1f KB", dSize];
 	} else {
 		result_str = [NSString stringWithFormat: @"%d bytes", fileSize];

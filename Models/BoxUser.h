@@ -60,7 +60,7 @@
 
 + (BoxUser *)savedUser;
 + (BOOL)clearSavedUser;
-+(void)updateUserInfo:(BoxUser *)myUser;
++(void)updateUserInfo:(NSString *)authToken updateDelegate:(id)delegate;
 
 - (NSDictionary *)attributesDictionary;
 - (NSArray *)attributeNames;

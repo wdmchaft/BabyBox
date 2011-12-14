@@ -10,6 +10,7 @@
 #import <WebKit/WebKit.h>
 #import "WebWindow.h"
 #import "BoxUser.h"
+#import "BoxLoginBuilder.h"
 
 #define apiURL @"http://www.box.net/api/1.0/rest?"
 #define ticketAction @"action=get_ticket&api_key=7r4sye4yr5abf36m4km9i80vo9fdm2f4"
@@ -17,10 +18,9 @@
 
 #define redirectURL @"http://www.klintholmes.com"
 
-@interface AppDelegate : NSObject <NSApplicationDelegate, WebWindowDelegate> {
+@interface AppDelegate : NSObject <NSApplicationDelegate, WebWindowDelegate, BoxLoginBuilderDelegate> {
     WebWindow *webWindow;
     WebView *web;
-    //BoxUser *user;
     NSTextField *usageText;
     NSProgressIndicator *usage;
     NSTextField *userName;
@@ -32,7 +32,6 @@
 @property (nonatomic, retain) IBOutlet WebView *web;
 @property (assign) IBOutlet NSWindow *window;
 @property (nonatomic, retain) WebWindow *webWindow;
-//@property (nonatomic, retain) BoxUser *user;
 @property (nonatomic, retain) IBOutlet NSTextField *userName;
 @property (nonatomic, retain) IBOutlet NSTextField *usageText;
 @property (nonatomic, retain) IBOutlet NSProgressIndicator *usage;
@@ -43,7 +42,6 @@
 -(IBAction)signIn:(id)sender;
 -(IBAction)createAccount:(id)sender;
 -(void)closeWebWindow;
--(void)fetchUserInfo;
 -(void)createBoxFolder;
 -(void)alertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo;
 -(void)updateUsage:(BoxUser *)user;

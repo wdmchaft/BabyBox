@@ -117,14 +117,22 @@ typedef enum {
 -(void)webView:(WebView *)sender didCommitLoadForFrame:(WebFrame *)frame
 {
     NSString *url = [sender mainFrameURL];
-    NSRange range = [url rangeOfString:@"?"];
-    NSString *subString = [url substringToIndex:NSMaxRange(range)];
-    if([subString isEqualToString:@"https://www.box.net/api/1.0/auth/oob?"]) {
-        _webViewStep = BoxLoginBuilderWebViewStepFormSubmitted;
-    } else {
-        _webViewStep = BoxLoginBuilderWebViewStepUserPassField;
+    if (url == nil) { 
+        url = @"";
     }
-    NSLog(@"%@", [sender mainFrameURL]);
+    
+    NSRange range = [url rangeOfString:@"?"];
+    if (NSMaxRange(range) > 37) {
+         _webViewStep = BoxLoginBuilderWebViewStepUserPassField;
+    } else {
+        NSString *subString = [url substringToIndex:NSMaxRange(range)];
+        if([subString isEqualToString:@"https://www.box.net/api/1.0/auth/oob?"]) {
+            _webViewStep = BoxLoginBuilderWebViewStepFormSubmitted;
+        } else {
+            _webViewStep = BoxLoginBuilderWebViewStepUserPassField;
+        }
+    }
+
 }
 
 /*-(void)good {

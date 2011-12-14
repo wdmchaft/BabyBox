@@ -30,23 +30,17 @@
 
 - (void) awakeFromNib {
     
-    BoxUser *user = [BoxUser savedUser];
+    BoxUser *user = [BoxUser savedUser];//[[BoxUser alloc] init];
     
-    if(user == nil)
-    {
+    if(![user loggedIn]) {
         //do nothing
-    }
-    else
-    {
+    } else {
         [userName setStringValue:[user userName]];
         [signInButton setTitle:@"Sign Out"];
         [createAccountButton setHidden:YES];
         
         //Move later
-        [BoxUser updateUserInfo:[BoxUser savedUser]];
-        
-        [self updateUsage:[BoxUser savedUser]9hsGV2L5
-         ];
+        [BoxUser updateUserInfo:[user authToken] updateDelegate:self];
     }
     
 }
@@ -130,7 +124,7 @@
 
 #pragma mark - HTTPRequest Delegate Methods
 
--(void)connectionSuccessful:(BOOL)success request:(id)request
+/*-(void)connectionSuccessful:(BOOL)success request:(id)request
 {
     HTTPRequest *result = (HTTPRequest *)request;
     NSError *error;
@@ -177,7 +171,7 @@
         [[NSUserDefaults standardUserDefaults] setValue:self.user.accessID forKey:@"accessID"];
         [[NSUserDefaults standardUserDefaults] setValue:self.user.ticket forKey:@"ticket"];
         [[NSUserDefaults standardUserDefaults] setValue:self.user.maxUploadSize forKey:@"maxUploadSize"];
-        [[NSUserDefaults standardUserDefaults] setValue:self.user.authToken forKey:@"authToken"];*/
+        [[NSUserDefaults standardUserDefaults] setValue:self.user.authToken forKey:@"authToken"];
         
         //[self.userName setStringValue:[user userName]];        
         
@@ -199,7 +193,7 @@
 //        [usage setMaxValue:[[user spaceAmount] doubleValue]];
 //        [usage setDoubleValue:[[user spaceUsed] doubleValue]];
 //        NSLog(@"%ld", [user.spaceAmount longValue] / (1048576*1024));
-//        usageText.stringValue = [NSString stringWithFormat:@"%ld %@ of %ld GB", [user.spaceUsed longValue] / base, measure, [user.spaceAmount longValue] / (1048576*1024)];*/
+//        usageText.stringValue = [NSString stringWithFormat:@"%ld %@ of %ld GB", [user.spaceUsed longValue] / base, measure, [user.spaceAmount longValue] / (1048576*1024)];
         
         [signInButton setTitle:@"Sign Out"];
     
@@ -212,23 +206,12 @@
     }
 //    [result release];
 //    [resultString release];
-}
+}*/
 
 #pragma mark - Finishing Authentication
 -(void) closeWebWindow
 {
     [webWindow close];
-    [self fetchUserInfo];
-}
-
--(void) fetchUserInfo
-{
-    /*NSString *urlRequest = [[NSString alloc] initWithFormat:@"%@%@&ticket=%@",apiURL, authAction, self.user.ticket];*/
-    /*NSLog(@"%@", urlRequest);
-    HTTPRequest *request = [[HTTPRequest alloc] init];
-    [request setDelegate:self];
-    [request startRequest:urlRequest animated:YES];
-    [request release];*/
 }
 
 -(void)createBoxFolder
