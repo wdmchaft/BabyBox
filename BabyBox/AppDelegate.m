@@ -218,7 +218,7 @@
 
 -(void)getFolderList {
     BoxUser * userModel = [BoxUser savedUser];
-    
+
 	NSString * ticket = userModel.authToken;
 	// Step 2a
 	NSNumber * folderIdToDownload = [NSNumber numberWithInt:0];
@@ -230,9 +230,10 @@
 		//Step 2d
 		NSLog(@"%@", [folderModel objectToString]);
 	}
-    //NSLog(@"%@", [[folderModel getModelAtIndex:0] ]);
+    NSLog(@"%@", [[folderModel getModelAtIndex:0] getValuesInDictionaryForm]);
     
-    BoxDownloadOperation *op =  [BoxDownloadOperation operationForFileID:[[folderModel getModelAtIndex:0] objectId] toPath:@"/Users/Klint/Desktop/" authToken:ticket delegate:self];
+    BoxDownloadOperation *op =  [BoxDownloadOperation operationForFileID:[[[folderModel getModelAtIndex:0] objectId] intValue] toPath:[NSString stringWithFormat:@"/Users/georgeshank/Desktop/%@", [[folderModel getModelAtIndex:0] objectName]] authToken:ticket delegate:self];
+    //NSLog(@"%@", [op ]);
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     [queue addOperation:op];
     
@@ -240,7 +241,9 @@
 
 -(void)operation:(BoxOperation *)op didCompleteForPath:(NSString *)path response:(BoxOperationResponse)response {
     //NSLog(@"%@", response);
-    NSLog(@"%@", [op response]);
+    //NSLog(@"%@", [op response]);
+    NSLog(@"%d", response);
+    NSLog(@"%@", [op summary]);
     NSLog(@"Your mom finnished that pancakes bra");
 }
 
@@ -311,7 +314,6 @@
     [usageText setStringValue:[NSString stringWithFormat:@"%@ of %@", spaceUsed, spaceQuota]];
     [usage setMaxValue:[[user storageQuota] doubleValue]];
     [usage setDoubleValue:[[user storageUsed] doubleValue]];
-
 } 
 
 @end
