@@ -11,7 +11,9 @@
 #import "XMLReader.h"
 #import "BoxLoginBuilder.h"
 #import "BoxModelUtilityFunctions.h"
-//#import "BoxCommonUISetup.h"
+#import "BoxFolder.h"
+#import "BoxFolderXMLBuilder.h"
+#import "BoxDownloadOperation.h"
 
 @implementation AppDelegate
 
@@ -41,8 +43,14 @@
         
         //Move later
         [BoxUser updateUserInfo:[user authToken] updateDelegate:self];
+        [self getFolderList];
+        
     }
     
+}
+
+-(void)operation:(BoxOperation *)opp willBeginForPath:(NSString *)path{
+    NSLog(@"Your mom just ate a plate of pancakes");
 }
 
 #pragma mark - Sign in
@@ -207,6 +215,35 @@
 //    [result release];
 //    [resultString release];
 }*/
+
+-(void)getFolderList {
+    BoxUser * userModel = [BoxUser savedUser];
+    
+	NSString * ticket = userModel.authToken;
+	// Step 2a
+	NSNumber * folderIdToDownload = [NSNumber numberWithInt:0];
+	// Step 2b
+	BoxFolderDownloadResponseType responseType = 0;
+	BoxFolder * folderModel = [BoxFolderXMLBuilder folderForId:folderIdToDownload token:ticket responsePointer:&responseType basePathOrNil:nil];
+	// Step 2c
+	if(responseType == boxFolderDownloadResponseTypeFolderSuccessfullyRetrieved) {
+		//Step 2d
+		NSLog(@"%@", [folderModel objectToString]);
+	}
+    //NSLog(@"%@", [[folderModel getModelAtIndex:0] ]);
+    
+    BoxDownloadOperation *op =  [BoxDownloadOperation operationForFileID:[[folderModel getModelAtIndex:0] objectId] toPath:@"/Users/Klint/Desktop/" authToken:ticket delegate:self];
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    [queue addOperation:op];
+    
+}
+
+-(void)operation:(BoxOperation *)op didCompleteForPath:(NSString *)path response:(BoxOperationResponse)response {
+    //NSLog(@"%@", response);
+    NSLog(@"%@", [op response]);
+    NSLog(@"Your mom finnished that pancakes bra");
+}
+
 
 #pragma mark - Finishing Authentication
 -(void) closeWebWindow
