@@ -230,12 +230,12 @@
 		//Step 2d
 		NSLog(@"%@", [folderModel objectToString]);
 	}
-    NSLog(@"%@", [[folderModel getModelAtIndex:0] getValuesInDictionaryForm]);
+    NSLog(@"%d", [folderModel numberOfObjectsInFolder]);
     
-    BoxDownloadOperation *op =  [BoxDownloadOperation operationForFileID:[[[folderModel getModelAtIndex:0] objectId] intValue] toPath:[NSString stringWithFormat:@"/Users/georgeshank/Desktop/%@", [[folderModel getModelAtIndex:0] objectName]] authToken:ticket delegate:self];
-    //NSLog(@"%@", [op ]);
-    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-    [queue addOperation:op];
+//    BoxDownloadOperation *op =  [BoxDownloadOperation operationForFileID:[[[folderModel getModelAtIndex:0] objectId] intValue] toPath:[NSString stringWithFormat:@"/Users/georgeshank/Desktop/%@", [[folderModel getModelAtIndex:0] objectName]] authToken:ticket delegate:self];
+//    //NSLog(@"%@", [op ]);
+//    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+//    [queue addOperation:op];
     
 }
 

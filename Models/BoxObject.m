@@ -140,6 +140,9 @@
 	return nil;
 }
 
-
+-(NSString *) description
+{
+    return [self objectName];
+}
 
 @end
