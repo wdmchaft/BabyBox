@@ -11,6 +11,7 @@
 #import "WebWindow.h"
 #import "BoxUser.h"
 #import "BoxLoginBuilder.h"
+#import "ProgressViewHolder.h"
 
 #define apiURL @"http://www.box.net/api/1.0/rest?"
 #define ticketAction @"action=get_ticket&api_key=7r4sye4yr5abf36m4km9i80vo9fdm2f4"
@@ -19,6 +20,7 @@
 #define redirectURL @"http://www.klintholmes.com"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, WebWindowDelegate, BoxLoginBuilderDelegate> {
+    IBOutlet ProgressViewHolder *progressViewHolder;
     WebWindow *webWindow;
     WebView *web;
     NSTextField *usageText;
@@ -30,6 +32,8 @@
     
     BoxUser *user;
     NSString *workingPath;
+    
+    NSOperationQueue *downloadQueue;
 }
 
 @property (nonatomic, retain) IBOutlet WebView *web;
@@ -44,6 +48,9 @@
 
 @property (nonatomic, retain) BoxUser *user;
 @property (nonatomic, retain) NSString *workingPath;
+
+@property (nonatomic, retain) NSOperationQueue *downloadQueue;
+@property (nonatomic, retain) ProgressViewHolder *progressViewHolder;
 
 -(IBAction)signIn:(id)sender;
 -(IBAction)createAccount:(id)sender;

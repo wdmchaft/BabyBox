@@ -1320,6 +1320,7 @@
 									<string key="NSFrame">{{4, 321}, {154, 17}}</string>
 									<reference key="NSSuperview" ref="78206715"/>
 									<reference key="NSWindow"/>
+									<reference key="NSNextKeyView" ref="588876989"/>
 									<string key="NSReuseIdentifierKey">_NS:3944</string>
 									<bool key="NSEnabled">YES</bool>
 									<object class="NSTextFieldCell" key="NSCell" id="721699528">
@@ -1453,7 +1454,7 @@
 							<string key="NSFrame">{{163, 0}, {7, 412}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="224621804"/>
+							<reference key="NSNextKeyView" ref="546175731"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSImageCell" key="NSCell" id="969458812">
 								<int key="NSCellFlags">130560</int>
@@ -1476,6 +1477,7 @@
 							<string key="NSFrame">{{205, 23}, {541, 20}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<bool key="NSViewCanDrawConcurrently">YES</bool>
 							<string key="NSReuseIdentifierKey">_NS:2352</string>
 							<int key="NSpiFlags">16392</int>
@@ -1500,6 +1502,16 @@
 								<reference key="NSBackgroundColor" ref="378893847"/>
 								<reference key="NSTextColor" ref="120256098"/>
 							</object>
+						</object>
+						<object class="NSCustomView" id="546175731">
+							<reference key="NSNextResponder" ref="439893737"/>
+							<int key="NSvFlags">268</int>
+							<string key="NSFrame">{{235, 187}, {480, 225}}</string>
+							<reference key="NSSuperview" ref="439893737"/>
+							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView" ref="224621804"/>
+							<string key="NSReuseIdentifierKey">_NS:1192</string>
+							<string key="NSClassName">ProgressViewHolder</string>
 						</object>
 					</array>
 					<string key="NSFrameSize">{769, 412}</string>
@@ -2256,6 +2268,14 @@
 					</object>
 					<int key="connectionID">569</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">progressViewHolder</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="546175731"/>
+					</object>
+					<int key="connectionID">580</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -2785,6 +2805,7 @@
 							<reference ref="562560479"/>
 							<reference ref="724852701"/>
 							<reference ref="224621804"/>
+							<reference ref="546175731"/>
 						</array>
 						<reference key="parent" ref="972006081"/>
 					</object>
@@ -3355,6 +3376,11 @@
 						<reference key="object" ref="139387955"/>
 						<reference key="parent" ref="224621804"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">579</int>
+						<reference key="object" ref="546175731"/>
+						<reference key="parent" ref="439893737"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -3514,6 +3540,7 @@
 				<string key="563.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="564.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="57.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="579.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="58.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="72.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="73.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3531,7 +3558,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">574</int>
+			<int key="maxID">580</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3554,6 +3581,7 @@
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="createAccountButton">NSButton</string>
+						<string key="progressViewHolder">ProgressViewHolder</string>
 						<string key="signInButton">NSButton</string>
 						<string key="usage">NSProgressIndicator</string>
 						<string key="usageText">NSTextField</string>
@@ -3565,6 +3593,10 @@
 						<object class="IBToOneOutletInfo" key="createAccountButton">
 							<string key="name">createAccountButton</string>
 							<string key="candidateClassName">NSButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="progressViewHolder">
+							<string key="name">progressViewHolder</string>
+							<string key="candidateClassName">ProgressViewHolder</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="signInButton">
 							<string key="name">signInButton</string>
@@ -3635,6 +3667,14 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/NSDocument.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">ProgressViewHolder</string>
+					<string key="superclassName">NSView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/ProgressViewHolder.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">

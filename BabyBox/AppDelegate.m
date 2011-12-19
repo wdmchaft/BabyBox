@@ -14,11 +14,12 @@
 #import "BoxFolder.h"
 #import "BoxFolderXMLBuilder.h"
 #import "BoxDownloadOperation.h"
+#import "ProgressView.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
-@synthesize webWindow, userName, usage, usageText, signInButton, createAccountButton, web, user, workingPath;
+@synthesize webWindow, userName, usage, usageText, signInButton, createAccountButton, web, user, workingPath, downloadQueue, progressViewHolder;
 
 - (void)dealloc
 {
@@ -28,10 +29,12 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
+
 }
 
 - (void) awakeFromNib {
-    
+    self.downloadQueue = [[NSOperationQueue alloc] init];
+    [self.downloadQueue setMaxConcurrentOperationCount:3];
     self.user = [BoxUser savedUser];//[[BoxUser alloc] init];
     self.workingPath = [[NSString alloc] initWithString:@"~/Box/"];
     self.workingPath = [self.workingPath stringByExpandingTildeInPath];
@@ -241,6 +244,7 @@
 //    //NSLog(@"%@", [op ]);
 //    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
 //    [queue addOperation:op];
+        
     
 }
 
@@ -280,27 +284,36 @@
         }
         else
         {
-            BoxDownloadOperation *op =  [BoxDownloadOperation operationForFileID:[[object objectId] intValue] toPath:[NSString stringWithFormat:@"%@/%@", self.workingPath, [object objectName]] authToken:ticket delegate:self];
-            //NSLog(@"%@", [op ]);
-            NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-            [queue addOperation:op];
+//            BoxDownloadOperation *op =  [BoxDownloadOperation operationForFileID:[[object objectId] intValue] toPath:[NSString stringWithFormat:@"%@/%@", self.workingPath, [object objectName]] authToken:ticket delegate:self];
+//            //NSLog(@"%@", [op ]);
+//            [downloadQueue addOperation:op];
+            
+            ProgressView *tmp = [[ProgressView alloc] init];
+            
+            
+            [progressViewHolder addSubview:tmp];
+
         }
 
     }
 }
 
-- (void)operation:(BoxOperation *)op didProgressForPath:(NSString *)path completionRatio:(NSNumber *)ratio
-{
-    NSLog(@"Ya'll want some progress? %@: %@", path, ratio);
-}
+//- (void)operation:(BoxOperation *)op didProgressForPath:(NSString *)path ratio:(NSNumber *)ratio
+//{
+//    //Do nothing
+//}
+//- (void)operation:(BoxOperation *)op didProgressForPath:(NSString *)path completionRatio:(NSNumber *)ratio
+//{
+//    NSLog(@"Ya'll want some progress? %@: %@", path, ratio);
+//}
 
--(void)operation:(BoxOperation *)op didCompleteForPath:(NSString *)path response:(BoxOperationResponse)response {
-    //NSLog(@"%@", response);
-    //NSLog(@"%@", [op response]);
-    NSLog(@"%d", response);
-    NSLog(@"%@", [op summary]);
-    NSLog(@"Your mom finnished that pancakes bra");
-}
+//-(void)operation:(BoxOperation *)op didCompleteForPath:(NSString *)path response:(BoxOperationResponse)response {
+//    //NSLog(@"%@", response);
+//    //NSLog(@"%@", [op response]);
+//    NSLog(@"%d", response);
+//    NSLog(@"%@", [op summary]);
+//    NSLog(@"Your mom finnished that pancakes bra");
+//}
 
 
 #pragma mark - Finishing Authentication
