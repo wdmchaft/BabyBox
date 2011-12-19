@@ -27,6 +27,9 @@
     
     NSButton *signInButton;
     NSButton *createAccountButton;
+    
+    BoxUser *user;
+    NSString *workingPath;
 }
 
 @property (nonatomic, retain) IBOutlet WebView *web;
@@ -39,10 +42,15 @@
 @property (nonatomic, retain) IBOutlet NSButton *signInButton;
 @property (nonatomic, retain) IBOutlet NSButton *createAccountButton;
 
+@property (nonatomic, retain) BoxUser *user;
+@property (nonatomic, retain) NSString *workingPath;
+
 -(IBAction)signIn:(id)sender;
 -(IBAction)createAccount:(id)sender;
 -(void)closeWebWindow;
 -(void)createBoxFolder;
 -(void)alertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo;
 -(void)updateUsage:(BoxUser *)user;
+-(void)initialDownload;
+-(void)downloadContentsOfFolderId:(NSNumber *)folderId;
 @end

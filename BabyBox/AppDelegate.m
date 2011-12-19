@@ -18,7 +18,7 @@
 @implementation AppDelegate
 
 @synthesize window = _window;
-@synthesize webWindow, userName, usage, usageText, signInButton, createAccountButton, web;
+@synthesize webWindow, userName, usage, usageText, signInButton, createAccountButton, web, user, workingPath;
 
 - (void)dealloc
 {
@@ -32,9 +32,11 @@
 
 - (void) awakeFromNib {
     
-    BoxUser *user = [BoxUser savedUser];//[[BoxUser alloc] init];
+    self.user = [BoxUser savedUser];//[[BoxUser alloc] init];
+    self.workingPath = [[NSString alloc] initWithString:@"~/Box/"];
+    self.workingPath = [self.workingPath stringByExpandingTildeInPath];
     
-    if(![user loggedIn]) {
+    if(![self.user loggedIn]) {
         //do nothing
     } else {
         [userName setStringValue:[user userName]];
@@ -43,7 +45,7 @@
         
         //Move later
         [BoxUser updateUserInfo:[user authToken] updateDelegate:self];
-        [self getFolderList];
+        //[self getFolderList];
         
     }
     
@@ -99,6 +101,7 @@
     [userName setStringValue:[user userName]];
     [self updateUsage:user];
 	//[_flipViewController.navigationController popViewControllerAnimated:YES];
+    [self createBoxFolder];
     
 }
 
@@ -216,6 +219,8 @@
 //    [resultString release];
 }*/
 
+#pragma mark - Downloading/Syncing of files from cloud
+
 -(void)getFolderList {
     BoxUser * userModel = [BoxUser savedUser];
 
@@ -237,6 +242,56 @@
 //    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
 //    [queue addOperation:op];
     
+}
+
+
+-(void)downloadContentsOfFolderId:(NSNumber *)folderId{
+	NSString * ticket = self.user.authToken;
+	// Step 2a
+
+	BoxFolderDownloadResponseType responseType = 0;
+	BoxFolder * folderModel = [BoxFolderXMLBuilder folderForId:folderId token:ticket responsePointer:&responseType basePathOrNil:nil];
+	// Step 2c
+	if(responseType == boxFolderDownloadResponseTypeFolderSuccessfullyRetrieved) {
+		//Step 2d
+		NSLog(@"%@", [folderModel objectToString]);
+	}
+    NSLog(@"%d", [folderModel numberOfObjectsInFolder]);
+  
+    
+    for(BoxObject *object in [folderModel objectsInFolder])
+    {
+        if([object respondsToSelector:@selector(numberOfObjectsInFolder)])
+        {
+            //It's a folder. Download its contents
+            NSString *previousPath = [[NSString alloc] initWithString:self.workingPath];
+            self.workingPath = [NSString stringWithFormat:@"%@/%@", previousPath, [object objectName]];
+            NSLog(@"%@", self.workingPath);
+            NSFileManager *fileManager= [NSFileManager defaultManager]; 
+            if(![fileManager createDirectoryAtPath:self.workingPath withIntermediateDirectories:YES attributes:nil error:NULL])
+                NSLog(@"Error: Create folder failed %@", self.workingPath);
+            else
+            {
+                //download contents of Box folder locally
+                [self downloadContentsOfFolderId:[object objectId]];
+            }
+            //[workingPath release];
+            self.workingPath = previousPath;
+        }
+        else
+        {
+            BoxDownloadOperation *op =  [BoxDownloadOperation operationForFileID:[[object objectId] intValue] toPath:[NSString stringWithFormat:@"%@/%@", self.workingPath, [object objectName]] authToken:ticket delegate:self];
+            //NSLog(@"%@", [op ]);
+            NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+            [queue addOperation:op];
+        }
+
+    }
+}
+
+- (void)operation:(BoxOperation *)op didProgressForPath:(NSString *)path completionRatio:(NSNumber *)ratio
+{
+    NSLog(@"Ya'll want some progress? %@: %@", path, ratio);
 }
 
 -(void)operation:(BoxOperation *)op didCompleteForPath:(NSString *)path response:(BoxOperationResponse)response {
@@ -270,7 +325,7 @@
     }
     else
     {
-       NSAlert *alert = [NSAlert alertWithMessageText:@"Do You Want Folder?" defaultButton:@"Jess" alternateButton:@"No" otherButton:nil informativeTextWithFormat:@"Hey Bro"];
+       NSAlert *alert = [NSAlert alertWithMessageText:@"You do not currently have a Box folder. Would you like to create one?" defaultButton:@"Yes" alternateButton:@"No" otherButton:nil informativeTextWithFormat:@"To sync files from your Box account to your computer, you will need a local Box folder."];
        // NSInteger *done = [alert runModal];
         [alert beginSheetModalForWindow:self.window modalDelegate:self didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:) contextInfo:nil];
         /*if ([alert runModal] == NSAlertDefaultReturn) {
@@ -289,16 +344,18 @@
 
 -(void)alertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
     if (returnCode == NSAlertDefaultReturn) {
-        NSString *path = [[NSString alloc] initWithString:@"~/Box/"];
-        path = [path stringByExpandingTildeInPath];
         //BOOL isDir;
         
-        NSLog(@"%@", path);
+        NSLog(@"%@", self.workingPath);
         
         NSFileManager *fileManager= [NSFileManager defaultManager]; 
-        if(![fileManager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:NULL])
-            
-            NSLog(@"Error: Create folder failed %@", path);
+        if(![fileManager createDirectoryAtPath:self.workingPath withIntermediateDirectories:YES attributes:nil error:NULL])
+            NSLog(@"Error: Create folder failed %@", self.workingPath);
+        else
+        {
+            //download contents of Box folder locally
+            [self downloadContentsOfFolderId:[NSNumber numberWithInt:0]];    
+        }
     } else {
         NSLog(@"You no want box");
     }
@@ -308,6 +365,8 @@
 
 -(void) updateUsage:(BoxUser *)user
 {
+    [self setUser:user];
+    
     NSString *spaceUsed = [BoxModelUtilityFunctions getFileFolderSizeString:[user storageUsed]];
     NSString *spaceQuota = [BoxModelUtilityFunctions getFileFolderSizeString:[user storageQuota]];
     
