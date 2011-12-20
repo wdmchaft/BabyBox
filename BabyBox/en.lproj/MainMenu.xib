@@ -1511,7 +1511,7 @@
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="224621804"/>
 							<string key="NSReuseIdentifierKey">_NS:1192</string>
-							<string key="NSClassName">ProgressViewHolder</string>
+							<string key="NSClassName">NSView</string>
 						</object>
 					</array>
 					<string key="NSFrameSize">{769, 412}</string>
@@ -1519,7 +1519,7 @@
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="78206715"/>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1280, 778}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
@@ -2274,7 +2274,7 @@
 						<reference key="source" ref="976324537"/>
 						<reference key="destination" ref="546175731"/>
 					</object>
-					<int key="connectionID">580</int>
+					<int key="connectionID">583</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3379,6 +3379,7 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">579</int>
 						<reference key="object" ref="546175731"/>
+						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="439893737"/>
 					</object>
 				</array>
@@ -3558,7 +3559,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">580</int>
+			<int key="maxID">583</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3581,7 +3582,7 @@
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="createAccountButton">NSButton</string>
-						<string key="progressViewHolder">ProgressViewHolder</string>
+						<string key="progressViewHolder">NSView</string>
 						<string key="signInButton">NSButton</string>
 						<string key="usage">NSProgressIndicator</string>
 						<string key="usageText">NSTextField</string>
@@ -3596,7 +3597,7 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="progressViewHolder">
 							<string key="name">progressViewHolder</string>
-							<string key="candidateClassName">ProgressViewHolder</string>
+							<string key="candidateClassName">NSView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="signInButton">
 							<string key="name">signInButton</string>
@@ -3667,14 +3668,6 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/NSDocument.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">ProgressViewHolder</string>
-					<string key="superclassName">NSView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/ProgressViewHolder.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">

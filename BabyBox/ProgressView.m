@@ -2,19 +2,18 @@
 //  ProgressView.m
 //  BabyBox
 //
-//  Created by George Shank on 12/19/11.
+//  Created by Klint Holmes on 12/19/11.
 //  Copyright (c) 2011 Klint Holmes. All rights reserved.
 //
 
 #import "ProgressView.h"
 #import "BoxOperation.h"
-
 @implementation ProgressView
-@synthesize progressBar, fileName;
+@synthesize progress;
 
-- (id)initWithFrame:(NSRect)frame
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithFrame:frame];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Initialization code here.
     }
@@ -22,18 +21,16 @@
     return self;
 }
 
-- (void)drawRect:(NSRect)dirtyRect
-{
-    // Drawing code here.
-}
-
 - (void)operation:(BoxOperation *)op didProgressForPath:(NSString *)path ratio:(NSNumber *)ratio
 {
     //Do nothing
 }
+
 - (void)operation:(BoxOperation *)op didProgressForPath:(NSString *)path completionRatio:(NSNumber *)ratio
 {
-    NSLog(@"Ya'll want some progress? %@: %@", path, ratio);
+    //NSLog(@"Ya'll want some progress? %@: %@", path, ratio);
+    [progress setMaxValue:1.0];
+    [progress setDoubleValue:[ratio doubleValue]];
 }
 
 -(void)operation:(BoxOperation *)op didCompleteForPath:(NSString *)path response:(BoxOperationResponse)response {
@@ -43,5 +40,6 @@
     NSLog(@"%@", [op summary]);
     NSLog(@"Your mom finnished that pancakes bra");
 }
+
 
 @end

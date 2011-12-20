@@ -2,18 +2,16 @@
 //  ProgressView.h
 //  BabyBox
 //
-//  Created by George Shank on 12/19/11.
+//  Created by Klint Holmes on 12/19/11.
 //  Copyright (c) 2011 Klint Holmes. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
 
-@interface ProgressView : NSView
-{
-    NSProgressIndicator *progressBar;
-    NSTextField *fileName;
+@interface ProgressView : NSViewController {
+    IBOutlet NSProgressIndicator *progress;
 }
 
-@property (nonatomic, retain) IBOutlet NSProgressIndicator *progressBar;
-@property (nonatomic, retain) IBOutlet NSTextField *fileName;
+@property (nonatomic, retain) NSProgressIndicator *progress;
+
 @end

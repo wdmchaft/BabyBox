@@ -15,10 +15,7 @@
 		6B2971CD148863EC00CC1229 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2971CC148863EC00CC1229 /* XMLReader.m */; };
 		6B4843961496E078005AFA32 /* BoxUser.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B4843951496E078005AFA32 /* BoxUser.plist */; };
 		6B48439A1496FCA7005AFA32 /* BoxGetUserInfoOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B4843991496FCA7005AFA32 /* BoxGetUserInfoOperation.m */; };
-		6BAD85CB149FFA680019A59D /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BAD85CA149FFA680019A59D /* ProgressView.m */; };
 		6BAD85CD149FFA8E0019A59D /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BAD85CC149FFA8E0019A59D /* ProgressView.xib */; };
-		6BAD85D0149FFBE30019A59D /* ProgressViewHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BAD85CF149FFBE30019A59D /* ProgressViewHolder.m */; };
-		6BAD85D2149FFC0D0019A59D /* ProgressViewHolder.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BAD85D1149FFC0D0019A59D /* ProgressViewHolder.xib */; };
 		FC72C8E414918BDB00BE2BD4 /* BoxComment.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8A314918BDB00BE2BD4 /* BoxComment.m */; };
 		FC72C8E514918BDB00BE2BD4 /* BoxFile.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8A514918BDB00BE2BD4 /* BoxFile.m */; };
 		FC72C8E614918BDB00BE2BD4 /* BoxFolder+SaveableFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C8A714918BDB00BE2BD4 /* BoxFolder+SaveableFolder.m */; };
@@ -56,6 +53,9 @@
 		FC72C90E14918BE500BE2BD4 /* NSDictionaryXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C90B14918BE500BE2BD4 /* NSDictionaryXMLParser.m */; };
 		FC72C91314918BF100BE2BD4 /* GTMRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = FC72C91214918BF100BE2BD4 /* GTMRegex.m */; };
 		FC762493149192E50054AB2F /* BoxLoginBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = FC762492149192E50054AB2F /* BoxLoginBuilder.m */; };
+		FCB393CE14A007AB006C3A69 /* ProgressHolderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB393CC14A007AB006C3A69 /* ProgressHolderViewController.m */; };
+		FCB393CF14A007AB006C3A69 /* ProgressHolderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCB393CD14A007AB006C3A69 /* ProgressHolderViewController.xib */; };
+		FCB393D214A00975006C3A69 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB393D114A00975006C3A69 /* ProgressView.m */; };
 		FCC0127C1488461A000429C2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC0127B1488461A000429C2 /* Cocoa.framework */; };
 		FCC012861488461A000429C2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FCC012841488461A000429C2 /* InfoPlist.strings */; };
 		FCC012881488461A000429C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC012871488461A000429C2 /* main.m */; };
@@ -78,12 +78,7 @@
 		6B4843951496E078005AFA32 /* BoxUser.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BoxUser.plist; sourceTree = "<group>"; };
 		6B4843981496FCA7005AFA32 /* BoxGetUserInfoOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxGetUserInfoOperation.h; sourceTree = "<group>"; };
 		6B4843991496FCA7005AFA32 /* BoxGetUserInfoOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxGetUserInfoOperation.m; sourceTree = "<group>"; };
-		6BAD85C9149FFA680019A59D /* ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
-		6BAD85CA149FFA680019A59D /* ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
 		6BAD85CC149FFA8E0019A59D /* ProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = "<group>"; };
-		6BAD85CE149FFBE30019A59D /* ProgressViewHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressViewHolder.h; sourceTree = "<group>"; };
-		6BAD85CF149FFBE30019A59D /* ProgressViewHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressViewHolder.m; sourceTree = "<group>"; };
-		6BAD85D1149FFC0D0019A59D /* ProgressViewHolder.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressViewHolder.xib; sourceTree = "<group>"; };
 		FC72C8A214918BDB00BE2BD4 /* BoxComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxComment.h; sourceTree = "<group>"; };
 		FC72C8A314918BDB00BE2BD4 /* BoxComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxComment.m; sourceTree = "<group>"; };
 		FC72C8A414918BDB00BE2BD4 /* BoxFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxFile.h; sourceTree = "<group>"; };
@@ -159,6 +154,11 @@
 		FC72C91214918BF100BE2BD4 /* GTMRegex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMRegex.m; sourceTree = "<group>"; };
 		FC762491149192E50054AB2F /* BoxLoginBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxLoginBuilder.h; sourceTree = "<group>"; };
 		FC762492149192E50054AB2F /* BoxLoginBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxLoginBuilder.m; sourceTree = "<group>"; };
+		FCB393CB14A007AB006C3A69 /* ProgressHolderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHolderViewController.h; sourceTree = "<group>"; };
+		FCB393CC14A007AB006C3A69 /* ProgressHolderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHolderViewController.m; sourceTree = "<group>"; };
+		FCB393CD14A007AB006C3A69 /* ProgressHolderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressHolderViewController.xib; sourceTree = "<group>"; };
+		FCB393D014A00975006C3A69 /* ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
+		FCB393D114A00975006C3A69 /* ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
 		FCC012771488461A000429C2 /* BabyBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabyBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCC0127B1488461A000429C2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		FCC0127E1488461A000429C2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -228,11 +228,8 @@
 		6BAD85D3149FFD880019A59D /* FileProgress */ = {
 			isa = PBXGroup;
 			children = (
-				6BAD85CE149FFBE30019A59D /* ProgressViewHolder.h */,
-				6BAD85CF149FFBE30019A59D /* ProgressViewHolder.m */,
-				6BAD85D1149FFC0D0019A59D /* ProgressViewHolder.xib */,
-				6BAD85C9149FFA680019A59D /* ProgressView.h */,
-				6BAD85CA149FFA680019A59D /* ProgressView.m */,
+				FCB393D014A00975006C3A69 /* ProgressView.h */,
+				FCB393D114A00975006C3A69 /* ProgressView.m */,
 				6BAD85CC149FFA8E0019A59D /* ProgressView.xib */,
 			);
 			name = FileProgress;
@@ -352,6 +349,16 @@
 			path = Vendor;
 			sourceTree = "<group>";
 		};
+		FCB393C914A00777006C3A69 /* VCTest */ = {
+			isa = PBXGroup;
+			children = (
+				FCB393CB14A007AB006C3A69 /* ProgressHolderViewController.h */,
+				FCB393CC14A007AB006C3A69 /* ProgressHolderViewController.m */,
+				FCB393CD14A007AB006C3A69 /* ProgressHolderViewController.xib */,
+			);
+			name = VCTest;
+			sourceTree = "<group>";
+		};
 		FCC0126C1488461A000429C2 = {
 			isa = PBXGroup;
 			children = (
@@ -400,6 +407,7 @@
 		FCC012811488461A000429C2 /* BabyBox */ = {
 			isa = PBXGroup;
 			children = (
+				FCB393C914A00777006C3A69 /* VCTest */,
 				6BAD85D3149FFD880019A59D /* FileProgress */,
 				FCC0128D1488461A000429C2 /* AppDelegate.h */,
 				FCC0128E1488461A000429C2 /* AppDelegate.m */,
@@ -480,7 +488,7 @@
 				6B1C27BD14889B4F00975EBE /* WebWindow.xib in Resources */,
 				6B4843961496E078005AFA32 /* BoxUser.plist in Resources */,
 				6BAD85CD149FFA8E0019A59D /* ProgressView.xib in Resources */,
-				6BAD85D2149FFC0D0019A59D /* ProgressViewHolder.xib in Resources */,
+				FCB393CF14A007AB006C3A69 /* ProgressHolderViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,8 +542,8 @@
 				FC72C91314918BF100BE2BD4 /* GTMRegex.m in Sources */,
 				FC762493149192E50054AB2F /* BoxLoginBuilder.m in Sources */,
 				6B48439A1496FCA7005AFA32 /* BoxGetUserInfoOperation.m in Sources */,
-				6BAD85CB149FFA680019A59D /* ProgressView.m in Sources */,
-				6BAD85D0149FFBE30019A59D /* ProgressViewHolder.m in Sources */,
+				FCB393CE14A007AB006C3A69 /* ProgressHolderViewController.m in Sources */,
+				FCB393D214A00975006C3A69 /* ProgressView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

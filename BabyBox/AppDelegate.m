@@ -15,6 +15,7 @@
 #import "BoxFolderXMLBuilder.h"
 #import "BoxDownloadOperation.h"
 #import "ProgressView.h"
+#import "ProgressHolderViewController.h"
 
 @implementation AppDelegate
 
@@ -39,6 +40,9 @@
     self.workingPath = [[NSString alloc] initWithString:@"~/Box/"];
     self.workingPath = [self.workingPath stringByExpandingTildeInPath];
     
+    ProgressHolderViewController *test = [[ProgressHolderViewController alloc] initWithNibName:@"ProgressHolderViewController" bundle:nil];
+    [progressViewHolder addSubview:test.view];
+
     if(![self.user loggedIn]) {
         //do nothing
     } else {
@@ -138,116 +142,8 @@
 
 #pragma mark - HTTPRequest Delegate Methods
 
-/*-(void)connectionSuccessful:(BOOL)success request:(id)request
-{
-    HTTPRequest *result = (HTTPRequest *)request;
-    NSError *error;
-    NSDictionary *dic = [XMLReader dictionaryForXMLData:result.buffer error:&error];
-    NSLog(@"%@", dic);
-    
-    NSString *status = [[NSString alloc] initWithString:[[[dic objectForKey:@"response"] objectForKey:@"status"] objectForKey:@"text"]];
-    
-    
-    
-    //If the ticket came back good
-    if([status isEqualToString:@"get_ticket_ok"])
-    {
-        NSString *ticket = [[NSString alloc] initWithString:[[[dic objectForKey:@"response"] objectForKey:@"ticket"] objectForKey:@"text"]];
-        //Open sign in webpage
-        [webWindow.webView.mainFrame loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://www.box.net/api/1.0/auth/%@", ticket]]]];
-        //[[webWindow loadingDialog] stopAnimation:self];
-    }
-    else if([status isEqualToString:@"get_auth_token_ok"])
-    {
-        NSString *authToken = [[NSString alloc] initWithString:[[[dic objectForKey:@"response"]objectForKey:@"auth_token"] objectForKey:@"text"]];
-        NSString *username = [[NSString alloc] initWithString:[[[[dic objectForKey:@"response"]objectForKey:@"user"] objectForKey:@"login"] objectForKey:@"text"]];
-        NSString *email = [[NSString alloc] initWithString:[[[[dic objectForKey:@"response"]objectForKey:@"user"] objectForKey:@"email"] objectForKey:@"text"]];
-        NSNumber *accessID = [NSNumber numberWithInt:[[[[[dic objectForKey:@"response"]objectForKey:@"user"] objectForKey:@"access_id"] objectForKey:@"text"] intValue]];
-        NSNumber *userID = [NSNumber numberWithInt:[[[[[dic objectForKey:@"response"]objectForKey:@"user"] objectForKey:@"user_id"] objectForKey:@"text"] intValue]];
-        NSNumber *quota = [NSNumber numberWithInt:[[[[[dic objectForKey:@"response"]objectForKey:@"user"] objectForKey:@"space_amount"] objectForKey:@"text"]intValue]];
-        NSNumber *storageUsed = [NSNumber numberWithInt:[[[[[dic objectForKey:@"response"]objectForKey:@"user"] objectForKey:@"space_used"] objectForKey:@"text"] intValue]];
-
-                
-       /* [self.user setAuthToken:authToken];
-        [self.user setUserName:username];
-        [self.user setEmail:email];
-        [self.user setAccessId:accessID];
-        [self.user setUserId:userID];
-        [self.user setStorageQuota:quota];
-        [self.user setStorageUsed:storageUsed];
-        //[self.user setMaxUploadSize:[NSNumber numberWithDouble:[maxUploadSize doubleValue]]];
-        
-        /*[[NSUserDefaults standardUserDefaults] setValue:self.user.userID forKey:@"userID"];
-        [[NSUserDefaults standardUserDefaults] setValue:self.user.login forKey:@"login"];
-        [[NSUserDefaults standardUserDefaults] setValue:self.user.email forKey:@"email"];
-        [[NSUserDefaults standardUserDefaults] setValue:self.user.spaceUsed forKey:@"spaceUsed"];
-        [[NSUserDefaults standardUserDefaults] setValue:self.user.spaceAmount forKey:@"spaceAmount"];
-        [[NSUserDefaults standardUserDefaults] setValue:self.user.accessID forKey:@"accessID"];
-        [[NSUserDefaults standardUserDefaults] setValue:self.user.ticket forKey:@"ticket"];
-        [[NSUserDefaults standardUserDefaults] setValue:self.user.maxUploadSize forKey:@"maxUploadSize"];
-        [[NSUserDefaults standardUserDefaults] setValue:self.user.authToken forKey:@"authToken"];
-        
-        //[self.userName setStringValue:[user userName]];        
-        
-//        NSString *measure = @"GB";
-//        long base;
-//        if ([user.spaceUsed longValue] <= 1024) {
-//            base = 1;
-//            measure = @"B";
-//        } else if ([user.spaceUsed longValue] > 1024 &&  [user.spaceUsed longValue] <= 1024*1024) {
-//            base = 1024;
-//            measure = @"KB";
-//        } else if ([user.spaceUsed longValue] > 1024*1024 &&  [user.spaceUsed longValue] <= 1024*1024*1024) {
-//            base = 1024*1024;
-//            measure = @"MB";
-//        } else {
-//            base = 1024*1024*1024;
-//            measure = @"GB";
-//        }
-//        [usage setMaxValue:[[user spaceAmount] doubleValue]];
-//        [usage setDoubleValue:[[user spaceUsed] doubleValue]];
-//        NSLog(@"%ld", [user.spaceAmount longValue] / (1048576*1024));
-//        usageText.stringValue = [NSString stringWithFormat:@"%ld %@ of %ld GB", [user.spaceUsed longValue] / base, measure, [user.spaceAmount longValue] / (1048576*1024)];
-        
-        [signInButton setTitle:@"Sign Out"];
-    
-        [createAccountButton setHidden:YES];
-        [self createBoxFolder];
-    }
-    else
-    {
-        NSLog(@"That ticket was baaaaad!");
-    }
-//    [result release];
-//    [resultString release];
-}*/
 
 #pragma mark - Downloading/Syncing of files from cloud
-
--(void)getFolderList {
-    BoxUser * userModel = [BoxUser savedUser];
-
-	NSString * ticket = userModel.authToken;
-	// Step 2a
-	NSNumber * folderIdToDownload = [NSNumber numberWithInt:0];
-	// Step 2b
-	BoxFolderDownloadResponseType responseType = 0;
-	BoxFolder * folderModel = [BoxFolderXMLBuilder folderForId:folderIdToDownload token:ticket responsePointer:&responseType basePathOrNil:nil];
-	// Step 2c
-	if(responseType == boxFolderDownloadResponseTypeFolderSuccessfullyRetrieved) {
-		//Step 2d
-		NSLog(@"%@", [folderModel objectToString]);
-	}
-    NSLog(@"%d", [folderModel numberOfObjectsInFolder]);
-    
-//    BoxDownloadOperation *op =  [BoxDownloadOperation operationForFileID:[[[folderModel getModelAtIndex:0] objectId] intValue] toPath:[NSString stringWithFormat:@"/Users/georgeshank/Desktop/%@", [[folderModel getModelAtIndex:0] objectName]] authToken:ticket delegate:self];
-//    //NSLog(@"%@", [op ]);
-//    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-//    [queue addOperation:op];
-        
-    
-}
-
 
 -(void)downloadContentsOfFolderId:(NSNumber *)folderId{
 	NSString * ticket = self.user.authToken;
@@ -263,9 +159,10 @@
     NSLog(@"%d", [folderModel numberOfObjectsInFolder]);
   
     
-    for(BoxObject *object in [folderModel objectsInFolder])
-    {
-        if([object respondsToSelector:@selector(numberOfObjectsInFolder)])
+    //for(BoxObject *object in [folderModel objectsInFolder])
+    //{
+    BoxObject *object = [[folderModel objectsInFolder] objectAtIndex:0]; 
+    if([object respondsToSelector:@selector(numberOfObjectsInFolder)])
         {
             //It's a folder. Download its contents
             NSString *previousPath = [[NSString alloc] initWithString:self.workingPath];
@@ -288,12 +185,16 @@
 //            //NSLog(@"%@", [op ]);
 //            [downloadQueue addOperation:op];
             
-            ProgressView *tmp = [[ProgressView alloc] init];
+            ProgressView *prog = [[ProgressView alloc] initWithNibName:@"ProgressView" bundle:nil];
             
-            
-            [progressViewHolder addSubview:tmp];
+            //ProgressView *tmp = [[ProgressView alloc] initWithFrame:CGRectMake(235, 412, 480, 225)];
+            BoxDownloadOperation *op =  [BoxDownloadOperation operationForFileID:[[object objectId] intValue] toPath:[NSString stringWithFormat:@"%@/%@", self.workingPath, [object objectName]] authToken:ticket delegate:prog];
 
-        }
+            
+            
+            [progressViewHolder addSubview:prog.view];
+            [downloadQueue addOperation:op];
+      //  }
 
     }
 }
